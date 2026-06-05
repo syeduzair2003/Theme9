@@ -54,7 +54,7 @@ const Blog = ({ data, preloadedImage }: Props) => {
       <div className="pt-6 border-t border-[#800000]/10 group-hover:border-[#800000]/30 transition-colors duration-500">
         <Link
           href={data?.link}
-          className="no-underline inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.3em] text-[#1A1A1A]/50 group-hover:gap-4 group-hover:text-[#800000] transition-all duration-300"
+          className="no-underline inline-flex items-center gap-2 text-[11px] font-black uppercase tracking-[0.3em] text-[#1A1A1A]/70 group-hover:gap-4 group-hover:text-[#800000] transition-all duration-300"
         >
           Read Full Story
           <ChevronRight

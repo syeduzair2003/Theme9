@@ -21,23 +21,8 @@ const page = async ({ searchParams }: Props) => {
 
   return (
     <div className="min-h-screen bg-[#FDFCF0]/60 selection:bg-[#800000]/10">
-      {/* Banner Area */}
-      <div className="w-full px-4 md:px-10 py-4 md:py-8">
-        <div className="max-w-[1440px] mx-auto">
-          {/* Container Slider */}
-          <div className="relative rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden shadow-[0_30px_70px_-20px_rgba(128,0,0,0.12)] border border-[#800000]/5 bg-white">
-            <HorizontalBannerSlider
-              companyId={c_data.unique_id}
-              slug_type={c_data.slug_type}
-              mer_slug={c_data.store_slug}
-              domain={companyDomain.domain}
-            />
-          </div>
-        </div>
-      </div>
-
-      {/* Content Grid */}
-      <div className="max-w-[1440px] mx-auto px-4 md:px-10 pb-16 md:pb-24">
+      {/* Content Grid (Added pt-24 md:pt-32 to clear the fixed/sticky navbar beautifully) */}
+      <div className="max-w-[1440px] mx-auto px-4 md:px-10 pt-24 md:pt-32 pb-16 md:pb-24">
         <div className="flex flex-col lg:flex-row gap-6 md:gap-10">
           {/* Sidebar Section */}
           <aside className="w-full lg:w-[320px] flex-shrink-0 order-2 lg:order-1">

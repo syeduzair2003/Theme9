@@ -67,7 +67,7 @@ const Footer = async ({
           <div className="lg:col-span-4 space-y-8">
             <Link
               href="/"
-              className="inline-block bg-white p-3 rounded-2xl shadow-xl shadow-blue-500/10 transition-transform hover:scale-105"
+              className="inline-block p-3 rounded-2xl shadow-xl shadow-[#800000]/50 transition-transform hover:scale-105"
             >
               <Image
                 src={getBaseImageUrl(
@@ -75,13 +75,13 @@ const Footer = async ({
                   companyFooterLogo,
                   "/themes/Theme_3/images/logo.png",
                 )}
-                height={50}
-                width={160}
-                className="h-10 w-auto object-contain"
+                height={80}
+                width={200}
+                className="h-20 w-auto object-contain"
                 alt="logo"
               />
             </Link>
-            <p className="text-slate-400 leading-relaxed text-sm max-w-sm">
+            <p className="text-slate-200 leading-relaxed text-sm max-w-sm">
               Connecting you to the best deals and premium savings across your
               favorite global brands. Shopping made smarter.
             </p>
@@ -104,9 +104,9 @@ const Footer = async ({
                         "",
                       )}
                       alt={platform.label}
-                      width={18}
-                      height={18}
-                      className="opacity-60 group-hover:opacity-100 transition-opacity"
+                      width={24}
+                      height={24}
+                      // className="opacity-60 group-hover:opacity-100 transition-opacity"
                     />
                   </Link>
                 );
@@ -238,19 +238,19 @@ const Footer = async ({
           </div>
 
           {/* 4. Reach Out (Contact Badges) */}
-          <div className="group/card p-6 rounded-2xl border border-[#FFFDF5]/5 bg-black/70 hover:border-[#FFFDF5]/20 hover:bg-black/60 transition-all duration-700 shadow-xl relative overflow-hidden backdrop-blur-sm">
-            <h4 className="text-[#FFFDF5] font-black text-[10px] uppercase tracking-[0.3em] flex items-center gap-3 mb-8 opacity-90">
+          <div className="group/card rounded-2xl border border-[#FFFDF5]/5 bg-black/70 hover:border-[#FFFDF5]/20 hover:bg-black/60 transition-all duration-700 shadow-xl relative overflow-hidden backdrop-blur-sm">
+            <h4 className="text-[#FFFDF5] font-black text-[10px] uppercase tracking-[0.3em] flex items-center gap-3 mb-8 pt-6 pl-6 opacity-90">
               <span className="w-1.5 h-1.5 rounded-full bg-[#FFFDF5] shadow-[0_0_10px_#FFFDF5]"></span>
               Reach Out
             </h4>
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 pl-4 pr-4">
               {disclaimer?.CompanyContactUs?.email && (
                 <div className="p-4 rounded-xl bg-black/40 border border-[#FFFDF5]/10 flex items-center gap-3 hover:border-[#FFFDF5]/30 transition-all group/contact">
                   <FontAwesomeIcon
                     icon={faEnvelopeOpen}
                     className="text-[#FFFDF5] opacity-70 w-3.5 h-3.5 group-hover/contact:opacity-100 group-hover/contact:scale-110 transition-all"
                   />
-                  <span className="text-[11px] font-bold truncate text-[#FFFDF5]/60 group-hover/contact:text-[#FFFDF5]">
+                  <span className="text-[13px] font-bold truncate text-[#FFFDF5]/60 group-hover/contact:text-[#FFFDF5]">
                     {disclaimer?.CompanyContactUs?.email}
                   </span>
                 </div>
@@ -261,7 +261,7 @@ const Footer = async ({
                     icon={faPhone}
                     className="text-[#FFFDF5] opacity-70 w-3.5 h-3.5 group-hover/contact:opacity-100 group-hover/contact:scale-110 transition-all"
                   />
-                  <span className="text-[11px] font-bold text-[#FFFDF5]/60 group-hover/contact:text-[#FFFDF5]">
+                  <span className="text-[13px] font-bold text-[#FFFDF5]/60 group-hover/contact:text-[#FFFDF5]">
                     {disclaimer?.CompanyContactUs?.phone_no}
                   </span>
                 </div>

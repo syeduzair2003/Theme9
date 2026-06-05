@@ -69,7 +69,7 @@ const OfferCard = async ({ offer, mer_slug_type, mer_slug, type }: Props) => {
         {/* Top Section: Brand & Rating */}
         <div className="relative z-10 mb-3">
           <Link href={merchantHref} className="no-underline">
-            <p className="text-[#1A1A1A]/50 text-[10px] font-black tracking-[0.2em] uppercase hover:text-[#800000] transition-all duration-500 inline-block cursor-pointer relative group/brand">
+            <p className="text-[#1A1A1A]/80 text-[10px] font-black tracking-[0.2em] uppercase hover:text-[#800000] transition-all duration-500 inline-block cursor-pointer relative group/brand">
               {brandName}
               <span className="absolute -bottom-0.5 left-0 w-0 h-[1px] bg-[#800000] transition-all duration-500 group-hover/brand:w-full" />
             </p>
@@ -94,7 +94,7 @@ const OfferCard = async ({ offer, mer_slug_type, mer_slug, type }: Props) => {
               ? `${product?.offer_title}`
               : `${discardHTMLTags(offer?.offer?.offer_title)}`}
           </h3>
-          <p className="text-[#1A1A1A]/40 text-[11px] font-medium line-clamp-1 italic">
+          <p className="text-[#1A1A1A]/70 text-[14px] font-medium line-clamp-1 italic">
             {getRandomStoreSeoTitle(brandName)}
           </p>
         </div>

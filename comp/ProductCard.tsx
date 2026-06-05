@@ -41,6 +41,17 @@ const ProductCard = async ({ offer, mer_slug, mer_slug_type, type }: any) => {
       p-5 flex flex-col transition-all duration-500 
       hover:-translate-y-2 hover:border-[#800000]/40"
     >
+      {finalDiscountTag && (
+        <div
+          className="absolute top-4 right-6 flex items-center gap-1.5 
+          rounded-full bg-gradient-to-r from-[#800000] to-[#5D0E0E] px-3.5 py-1.5 text-[10px] 
+          font-black text-[#FFFDF5] border border-white/10 shadow-[0_8px_20px_rgba(128,0,0,0.25)] z-20 tracking-widest uppercase animate-in fade-in zoom-in duration-300"
+        >
+          <Flame size={12} className="fill-[#FFFDF5] animate-pulse" />
+          <span className="drop-shadow-sm">{finalDiscountTag}</span>
+        </div>
+      )}
+
       {/* IMAGE */}
       <div className="relative h-44 rounded-tr-[2rem] rounded-bl-[2rem] bg-white border border-[#EADDCA] overflow-hidden flex items-center justify-center">
         <Image
@@ -49,24 +60,13 @@ const ProductCard = async ({ offer, mer_slug, mer_slug_type, type }: any) => {
           fill
           className="object-contain p-6 transition-transform duration-700 group-hover:scale-110"
         />
-
-        {finalDiscountTag && (
-          <div
-            className="absolute top-3 right-3 flex items-center gap-1.5 
-            rounded-full bg-gradient-to-r from-[#800000] to-[#5D0E0E] px-3.5 py-1.5 text-[10px] 
-            font-black text-[#FFFDF5] border border-white/10 shadow-[0_8px_20px_rgba(128,0,0,0.25)] z-20 tracking-widest uppercase animate-in fade-in zoom-in duration-300"
-          >
-            <Flame size={12} className="fill-[#FFFDF5] animate-pulse" />
-            <span className="drop-shadow-sm">{finalDiscountTag}</span>
-          </div>
-        )}
       </div>
 
       {/* CONTENT */}
       <div className="mt-4 space-y-3">
         <div className="flex items-center gap-1 text-yellow-400/80">
           <Star size={10} fill="currentColor" />
-          <span className="text-[10px] uppercase tracking-widest text-[#1A1A1A]/50 font-bold">
+          <span className="text-[10px] uppercase tracking-widest text-[#1A1A1A]/70 font-bold">
             Top Rated
           </span>
         </div>
@@ -84,7 +84,7 @@ const ProductCard = async ({ offer, mer_slug, mer_slug_type, type }: any) => {
             merchantHref={merchantHref}
             offer={product}
             type="anchor"
-            buttonClass="text-slate-400 font-semibold hover:text-[#800000] transition"
+            buttonClass="text-slate-700 font-bold hover:text-[#800000] transition"
           />
 
           {salePrice > 0 && (

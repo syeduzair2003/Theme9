@@ -45,10 +45,11 @@ const CouponCard = async ({
       : getBaseImageUrl(domain, merchant_logo, "");
 
   return (
-    <div className="group relative  bg-[#F5F5DC] border border-[#EADDCA] rounded-tr-[3rem] rounded-bl-[3rem] p-8 flex flex-col h-full transition-all duration-700 shadow-[0_10px_30px_rgba(0,0,0,0.02)] hover:border-[#800000]/30 hover:shadow-[0_30px_60px_rgba(128,0,0,0.12)] hover:-translate-y-3">
-      {/* Discount Badge */}
+    <div className="group relative bg-[#F5F5DC] border border-[#EADDCA] rounded-tr-[3rem] rounded-bl-[3rem] p-8 flex flex-col h-full transition-all duration-700 shadow-[0_10px_30px_rgba(0,0,0,0.02)] hover:border-[#800000]/30 hover:shadow-[0_30px_60px_rgba(128,0,0,0.12)] hover:-translate-y-3">
+      
+      {/* Discount Badge (Moved to Top-Left for perfect balance and zero clutter) */}
       {finalDiscountTag && (
-        <div className="absolute -top-3 -right-3 bg-gradient-to-br from-[#800000] to-[#520000] text-[#FFFDF5] text-[11px] font-black px-5 py-2 rounded-2xl shadow-xl shadow-[#800000]/20 z-20 flex items-center gap-2 border border-[#A52A2A]/20">
+        <div className="absolute -top-3 -left-3 bg-gradient-to-br from-[#800000] to-[#520000] text-[#FFFDF5] text-[11px] font-black px-5 py-2 rounded-2xl shadow-xl shadow-[#800000]/20 z-20 flex items-center gap-2 border border-[#A52A2A]/20">
           <Zap size={12} className="fill-[#FFFDF5]" />
           {finalDiscountTag}
         </div>
@@ -56,6 +57,7 @@ const CouponCard = async ({
 
       <div className="flex-grow">
         <div className="flex justify-between items-start mb-8">
+          {/* Left Side: Merchant Logo */}
           <div className="relative w-16 h-16 bg-[#F5F5DC] rounded-2xl p-3 shadow-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500 border border-[#EADDCA]/30">
             <Image
               src={
@@ -70,8 +72,10 @@ const CouponCard = async ({
               className="object-contain"
             />
           </div>
-          <div className="flex flex-col items-end">
-            <div className="flex items-center gap-1.5 text-[#A52A2A] font-bold text-[10px] uppercase tracking-widest bg-[#800000]/10 px-3 py-1.5 rounded-full mb-2">
+
+          {/* Right Side: Meta Badges (Added space-y-2.5 to separate Verified and Duration smoothly) */}
+          <div className="flex flex-col items-end space-y-2.5">
+            <div className="flex items-center gap-1.5 text-[#A52A2A] font-bold text-[10px] uppercase tracking-widest bg-[#800000]/10 px-3 py-1.5 rounded-full">
               <ShieldCheck size={12} className="stroke-[#A52A2A]" /> Verified
             </div>
             <OfferDuration endDate={product?.end_date} />
@@ -90,7 +94,7 @@ const CouponCard = async ({
               <div className="scale-[0.7] xs:scale-90 origin-left shrink-0">
                 <RenderRating rating={rating} />
               </div>
-              <span className="ml-1 text-slate-500 text-[10px] font-bold whitespace-nowrap">
+              <span className="ml-1 text-slate-700 text-[11px] font-bold whitespace-nowrap">
                 ({rating})
               </span>
             </div>
@@ -102,7 +106,7 @@ const CouponCard = async ({
                 merchantHref={merchantHref}
                 offer={product}
                 type="anchor"
-                buttonClass="text-slate-400 text-[11px] font-semibold hover:text-[#800000] transition"
+                buttonClass="text-slate-700 text-[12px] font-bold hover:text-[#800000] transition"
               />
             </div>
           </div>

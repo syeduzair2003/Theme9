@@ -1,13 +1,28 @@
 "use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useState, useEffect } from "react";
 
 interface GlobalLoaderProps {
   logo?: string;
 }
 
 const GlobalLoader = ({ logo }: GlobalLoaderProps) => {
-  const displayLogo = logo || "/logo.png";
+  // Function to ensure path is always absolute
+  const formatLogoPath = (path?: string) => {
+    if (!path) return "/logo.png";
+    if (path.startsWith("http://") || path.startsWith("https://") || path.startsWith("/")) {
+      return path;
+    }
+    return `/${path}`; // Prepend slash if it's a relative path
+  };
+
+  const [imgSrc, setImgSrc] = useState<string>(formatLogoPath(logo));
+
+  // Sync state if the logo prop changes dynamically
+  useEffect(() => {
+    setImgSrc(formatLogoPath(logo));
+  }, [logo]);
 
   return (
     <motion.div
@@ -39,15 +54,18 @@ const GlobalLoader = ({ logo }: GlobalLoaderProps) => {
           />
 
           <div className="relative w-28 h-28 md:w-36 md:h-36 z-10">
-            {/* Logo */}
-            {displayLogo && (
+            {imgSrc && (
               <Image
-                src={displayLogo}
-                alt="Elite Logo"
+                src={imgSrc}
+                alt="Logo"
                 fill
                 className="object-contain brightness-[1.02]"
                 priority
                 unoptimized
+                onError={() => {
+                  // If the provided logo fails to load, fallback to default immediately
+                  setImgSrc("/logo.png");
+                }}
               />
             )}
           </div>

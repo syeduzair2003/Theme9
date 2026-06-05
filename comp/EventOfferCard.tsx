@@ -62,15 +62,19 @@ const EventOfferCard = ({
         )}
       </div>
 
-      <div className="relative w-24 h-24 mx-auto mt-4 mb-2 flex items-center justify-center transition-transform duration-500 group-hover:scale-105">
+      {/* Image Container (Box border removed for a seamless look) */}
+      <div className="relative w-24 h-24 mx-auto mt-4 flex items-center justify-center transition-transform duration-500 group-hover:scale-105">
         <Image
           src={imageSrc}
           alt={getRandomStoreSeoTitle(merchant_name)}
           fill
-          className="object-contain drop-shadow-sm p-1"
+          className="object-contain p-1"
           sizes="(max-width: 768px) 100vw, 33vw"
         />
       </div>
+
+      {/* Clean Horizontal Divider Line to separate logo zone from content */}
+      <div className="w-full h-[1px] bg-[#EADDCA]/80 my-3" />
 
       {/* --- Content Body --- */}
       <div className="flex flex-col flex-grow">

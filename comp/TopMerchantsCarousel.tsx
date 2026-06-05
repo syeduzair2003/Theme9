@@ -3,6 +3,10 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 
+// ── Swiper Core Styles (Yahan Masla Tha, Inke Bina Carousel Vertically Toot Jata Hai) ──
+import "swiper/css";
+import "swiper/css/pagination";
+
 interface CarouselProps {
   children: React.ReactNode[];
 }
@@ -21,7 +25,7 @@ const TopMerchantsCarousel = ({ children }: CarouselProps) => {
           768: { slidesPerView: 4 },
           1024: { slidesPerView: 6 },
         }}
-        className="!static"
+        className="!static w-full"
       >
         {children.map((card, index) => (
           <SwiperSlide key={index} className="py-2">
