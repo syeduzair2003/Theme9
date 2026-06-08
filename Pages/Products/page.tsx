@@ -35,7 +35,7 @@ const page = async () => {
                 </span>
               </nav>
 
-              {/* Solid Bold Heading */}
+              {/* Heading */}
               <h1 className="text-4xl md:text-5xl font-black text-black leading-[1.1] mb-6 tracking-tighter">
                 Premium <span className="text-[#800000]">Brands</span> <br />
                 <span className="text-slate-900">& Deals</span>
@@ -142,8 +142,17 @@ const page = async () => {
           </div>
         </div>
 
-        {/* The Grid: Merchant Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-8 gap-y-16">
+        <div
+          className={`grid gap-x-8 gap-y-16 mx-auto justify-center ${
+            merchants?.length === 1
+              ? "grid-cols-1 max-w-[320px]"
+              : merchants?.length === 2
+                ? "grid-cols-1 sm:grid-cols-2 max-w-[680px]"
+                : merchants?.length === 3
+                  ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-[1020px]"
+                  : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 w-full"
+          }`}
+        >
           {merchants && merchants.length > 0 ? (
             merchants.map((item, i) => (
               <div

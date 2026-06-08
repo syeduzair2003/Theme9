@@ -85,7 +85,6 @@ const MobileNavMenu = ({
         <FaBars size={20} />
       </button>
 
-      {/* BACKDROP */}
       <div
         className={`fixed inset-0 bg-black/60 z-[9998] transition-opacity duration-300 ${
           open ? "opacity-100 visible" : "opacity-0 invisible"
@@ -108,7 +107,7 @@ const MobileNavMenu = ({
             className="relative h-9 w-32"
           >
             <Image
-              src="/logo.png"
+              src="https://gettopdiscounts.com/uploads/company_5/images/1747949529_682f97d92d00a.svg"
               alt="Logo"
               width={150}
               height={40}
@@ -133,6 +132,7 @@ const MobileNavMenu = ({
               mer_slug={mer_slug}
               slug_type={slug_type}
               cat_slug={cat_slug}
+              closeDrawer={() => setOpen(false)}
             />
           </div>
 
