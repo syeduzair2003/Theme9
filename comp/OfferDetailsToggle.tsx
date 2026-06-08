@@ -2,11 +2,10 @@
 
 import React, { useState } from "react";
 import SimpleOfferModal from "./SimpleOfferModal";
-import { Offer } from "@/services/dataTypes";
 import { getFinalDiscountTag } from "@/constants/hooks";
 
 interface Props {
-  offer: Offer;
+  offer: any;
   merchantHref: string;
   imageSrc: string;
   domain: string;
@@ -24,7 +23,6 @@ const OfferDetailsToggle = ({
 }: Props) => {
   const [showModal, setShowModal] = useState(false);
 
-  // Prevent parent Link click when clicking this button
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();

@@ -16,6 +16,7 @@ import Footer from "../comp/Footer";
 import { apiGetTopMerchants } from "@/apis/page_optimization";
 import HomeBlogSection from "../comp/HomeBlogSection";
 import HomeEventSection from "../comp/HomeEventSection";
+import BrandedProductsHome from "../comp/BrandedProductsHome";
 import PopularCoupons from "../comp/PopularCoupons";
 import TrendingProducts from "../comp/TrendingProducts";
 const Home = async () => {
@@ -66,6 +67,11 @@ const Home = async () => {
         mer_slug={c_data?.store_slug}
       />
       <PremimumBrand
+        companyId={c_data?.unique_id}
+        mer_slug_type={c_data?.slug_type}
+        mer_slug={c_data?.store_slug}
+      />
+      <BrandedProductsHome
         companyId={c_data?.unique_id}
         mer_slug_type={c_data?.slug_type}
         mer_slug={c_data?.store_slug}

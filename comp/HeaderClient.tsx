@@ -36,7 +36,6 @@ const HeaderClient = ({
 }: HeaderClientProps) => {
   const pathname = usePathname();
 
-  // Normalize path for comparison (handling trailing slashes)
   const currentPath = pathname === "/" ? "/" : pathname.replace(/\/$/, "");
 
   const navPaths: Record<string, string> = {
@@ -49,19 +48,16 @@ const HeaderClient = ({
     Blog: "https://blog.gettopdiscounts.com",
   };
 
-  // Logic to check if a section is active based on the URL
   const checkActive = (name: string) => {
     const targetPath = navPaths[name];
     if (name === "Home") return currentPath === "/";
     if (!targetPath || targetPath.startsWith("http")) return false;
 
-    // Active if exact match or if current URL is a sub-page of the target
     return (
       currentPath === targetPath || currentPath.startsWith(`${targetPath}/`)
     );
   };
 
-  // Renders top-level items that ONLY trigger dropdowns (Non-clickable)
   const renderDropdownLabel = (
     name: string,
     items: any[],
@@ -72,7 +68,6 @@ const HeaderClient = ({
 
     return (
       <div className="relative group flex items-center h-16 md:h-20" key={name}>
-        {/* --- TRIGGER LABEL (DIV) --- */}
         <div
           className={`text-[13px] md:text-[15px] font-bold transition-all flex items-center gap-1.5 cursor-default h-full relative ${
             isActive ? "text-[#800000]" : "text-slate-800 hover:text-[#800000]"
@@ -84,7 +79,6 @@ const HeaderClient = ({
               isActive ? "opacity-100" : "opacity-40 group-hover:rotate-180"
             }`}
           />
-          {/* Animated underline indicator */}
           <span
             className={`absolute bottom-3 md:bottom-5 left-1/2 -translate-x-1/2 h-0.5 bg-[#800000] rounded-full transition-all duration-500 shadow-[0_1px_5px_rgba(128,0,0,0.4)] ${
               isActive ? "w-6" : "w-0 group-hover:w-6"
@@ -92,9 +86,8 @@ const HeaderClient = ({
           />
         </div>
 
-        {/* --- DROPDOWN CONTENT --- */}
+        {/* DROPDOWN CONTENT */}
         <div className="absolute top-[100%] left-1/2 -translate-x-1/2 w-64 md:w-72 bg-[#FEF9E7] rounded-[2rem] md:rounded-[2.5rem] shadow-[0_20px_50px_rgba(128,0,0,0.15)] border border-white/60 opacity-0 invisible group-hover:opacity-100 group-hover:visible translate-y-3 group-hover:translate-y-0 transition-all duration-500 z-50 p-2.5 md:p-3 overflow-hidden">
-          {/* View All Link */}
           <div className="mb-3 md:mb-4 border-b border-[#800000]/5 pb-3 md:pb-4">
             <Link
               href={navPaths[name]}
@@ -108,7 +101,6 @@ const HeaderClient = ({
             </Link>
           </div>
 
-          {/* Items List */}
           <div className="max-h-[250px] md:max-h-[350px] overflow-y-auto pr-1 no-scrollbar [&::-webkit-scrollbar]:w-[4px] md:[&::-webkit-scrollbar]:w-[6px] [&::-webkit-scrollbar-thumb]:bg-[#800000]/20 [&::-webkit-scrollbar-thumb]:rounded-full hover:[&::-webkit-scrollbar-thumb]:bg-[#800000]">
             {items?.map((item: any, idx: number) => (
               <Link
@@ -145,7 +137,6 @@ const HeaderClient = ({
   return (
     <div className="max-w-7xl mx-auto px-4 lg:px-6 xl:px-10">
       <div className="flex h-16 md:h-20 items-center justify-between gap-4 md:gap-6">
-        {/* LOGO - Scaled slightly for smaller screens */}
         <Link
           href="/"
           className="shrink-0 hover:scale-105 transition-transform duration-300"
@@ -202,10 +193,14 @@ const HeaderClient = ({
             [{ name: "Branded Products" }],
             () => "/products",
           )}
-          {renderDropdownLabel("Events", events, (e) => `/events/${e.slug}`)}
-          {renderDropdownLabel("Promotion", promotions, (p) =>
-            getPromotionHref(p, promotion_slug),
-          )}
+
+          {events?.length > 0 &&
+            renderDropdownLabel("Events", events, (e) => `/events/${e.slug}`)}
+
+          {promotions?.length > 0 &&
+            renderDropdownLabel("Promotion", promotions, (p) =>
+              getPromotionHref(p, promotion_slug),
+            )}
 
           {/* BLOG */}
           <Link

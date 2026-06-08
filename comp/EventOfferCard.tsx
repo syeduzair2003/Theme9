@@ -62,7 +62,7 @@ const EventOfferCard = ({
         )}
       </div>
 
-      {/* Image Container (Box border removed for a seamless look) */}
+      {/* Image Container */}
       <div className="relative w-24 h-24 mx-auto mt-4 flex items-center justify-center transition-transform duration-500 group-hover:scale-105">
         <Image
           src={imageSrc}
@@ -73,7 +73,6 @@ const EventOfferCard = ({
         />
       </div>
 
-      {/* Clean Horizontal Divider Line to separate logo zone from content */}
       <div className="w-full h-[1px] bg-[#EADDCA]/80 my-3" />
 
       {/* --- Content Body --- */}
@@ -81,7 +80,7 @@ const EventOfferCard = ({
         <div className="flex flex-col items-center mb-1">
           <Link
             href={merchantHref}
-            className="text-[9px] font-bold text-slate-400 hover:text-[#800000] uppercase tracking-widest transition-colors"
+            className="text-[9px] font-bold text-slate-600 hover:text-[#800000] uppercase tracking-widest transition-colors"
           >
             {merchant_name}
           </Link>
@@ -91,14 +90,14 @@ const EventOfferCard = ({
           {discardHTMLTags(product?.offer_title)}
         </h5>
 
-        <div className="flex items-center justify-center gap-1 text-[11px] font-bold text-slate-400 mb-3">
+        <div className="flex items-center justify-center gap-1 text-[12px] font-bold text-slate-600 mb-3">
           <OfferDetailsToggle
             domain={domain}
             imageSrc={imageSrc}
             merchantHref={merchantHref}
             offer={product}
             type="anchor"
-            buttonClass="text-slate-400 font-semibold hover:text-[#800000] transition"
+            buttonClass="text-slate-600 font-semibold hover:text-[#800000] transition"
           />
         </div>
 
@@ -156,7 +155,7 @@ const EventOfferCard = ({
         </div>
 
         {/* Footer Tag */}
-        <p className="mt-3 text-[9px] font-bold text-slate-400 uppercase tracking-tighter">
+        <p className="mt-3 text-[9px] font-bold text-slate-600 uppercase tracking-tighter">
           Verified {merchant_name} Deals
         </p>
       </div>

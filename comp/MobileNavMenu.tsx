@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect, useRef } from "react"; // 1. useRef add kiya
+import React, { useState, useEffect, useRef } from "react";
 import { FaBars, FaTimes, FaChevronDown, FaArrowRight } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
@@ -60,13 +60,19 @@ const MobileNavMenu = ({
       path: "/products",
       type: "prod",
     },
-    { name: "Events", data: events, path: "/events", type: "event" },
-    {
-      name: "Promotion",
-      data: promotions,
-      path: `/${promotion_slug}`,
-      type: "promo",
-    },
+    ...(events && events.length > 0
+      ? [{ name: "Events", data: events, path: "/events", type: "event" }]
+      : []),
+    ...(promotions && promotions.length > 0
+      ? [
+          {
+            name: "Promotion",
+            data: promotions,
+            path: `/${promotion_slug}`,
+            type: "promo",
+          },
+        ]
+      : []),
   ];
 
   return (
@@ -121,7 +127,6 @@ const MobileNavMenu = ({
 
         {/* Content Section */}
         <div className="flex-1 overflow-y-auto p-5 space-y-6 no-scrollbar">
-          {/* Search Box */}
           <div className="bg-white rounded-2xl p-1 shadow-sm border border-[#800000]/5">
             <MobileNavSearch
               companyId={company_id}

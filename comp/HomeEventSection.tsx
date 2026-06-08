@@ -51,7 +51,7 @@ const HomeEventSection = async ({
       className="relative bg-[#fffde0] py-24 px-6 overflow-hidden"
       id="recent-deals-section"
     >
-      {/* Section Divider Line (Maroon Gradient) */}
+      {/* Section Divider Line */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[1px] bg-gradient-to-r from-transparent via-[#800000]/10 via-[#800000]/60 via-[#800000]/10 to-transparent opacity-100 shadow-[0_1px_2px_rgba(0,0,0,0.05)]" />
 
       <div className="max-w-7xl mx-auto">
