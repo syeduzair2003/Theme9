@@ -14,6 +14,7 @@ interface Props {
   cat_slug: string;
   promotion_slug: string;
   logo: string | null;
+  blog_url?: string; // 🔧 Added: Layout/Page se blog_url accept karne ke liye type add kiya
 }
 
 const Header = async ({
@@ -24,6 +25,7 @@ const Header = async ({
   cat_slug,
   logo,
   promotion_slug,
+  blog_url, // 🔧 Added: Prop destructure kiya
 }: Props) => {
   // 1. Fetch all data on the Server
   const [categories, merchants, events, promotions] = await Promise.all([
@@ -47,6 +49,7 @@ const Header = async ({
         slug_type={slug_type}
         cat_slug={cat_slug}
         promotion_slug={promotion_slug}
+        blog_url={blog_url || "https://blog.gettopdiscounts.com"}
         companyLogo={companyLogo}
         categories={categories}
         merchants={merchants}

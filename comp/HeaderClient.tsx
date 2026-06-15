@@ -20,6 +20,8 @@ interface HeaderClientProps {
   merchants: any[];
   events: any[];
   promotions: any[];
+  blog_url: string;
+  blog_title?: string;
 }
 
 const HeaderClient = ({
@@ -33,6 +35,8 @@ const HeaderClient = ({
   merchants,
   events,
   promotions,
+  blog_url,
+  blog_title,
 }: HeaderClientProps) => {
   const pathname = usePathname();
 
@@ -45,7 +49,7 @@ const HeaderClient = ({
     Products: "/all-products",
     Events: "/events",
     Promotion: `/${promotion_slug}`,
-    Blog: "https://blog.gettopdiscounts.com",
+    Blog: blog_url || "https://blog.gettopdiscounts.com",
   };
 
   const checkActive = (name: string) => {
@@ -208,7 +212,7 @@ const HeaderClient = ({
             target="_blank"
             className="text-[14px] xl:text-[15px] font-bold no-underline transition-all relative group flex items-center h-16 md:h-20 text-slate-800 hover:text-[#800000]"
           >
-            Blog
+            {blog_title || "Blog"}
             <span className="absolute bottom-3 md:bottom-5 left-1/2 -translate-x-1/2 h-0.5 bg-[#800000] rounded-full transition-all duration-500 shadow-[0_1px_5px_rgba(128,0,0,0.4)] w-0 group-hover:w-6" />
           </Link>
         </nav>
@@ -224,6 +228,8 @@ const HeaderClient = ({
             events={events}
             promotions={promotions}
             promotion_slug={promotion_slug}
+            blog_url={blog_url}
+            blog_title={blog_title}
           />
         </div>
       </div>
