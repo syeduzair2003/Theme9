@@ -25,7 +25,6 @@ interface Props {
 const Theme10Layout = async ({ children }: Props) => {
   const companyDomain = await cookieService.get("domain");
   const c_data = (await apiCompanyUpdatedData(companyDomain)).data;
-
   const [
     categories,
     merchantResponse,
