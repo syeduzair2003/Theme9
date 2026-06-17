@@ -4,7 +4,7 @@ import { apiGetNavMerchants } from "@/apis/merchant";
 import { apiGetEvents, apiGetAllPromotion } from "@/apis/user";
 import { getBaseImageUrl } from "@/constants/hooks";
 import StickyHeader from "./StickyHeader";
-import HeaderClient from "./HeaderClient"; // Our new client component
+import HeaderClient from "./HeaderClient";
 
 interface Props {
   company_id: string;
@@ -14,7 +14,7 @@ interface Props {
   cat_slug: string;
   promotion_slug: string;
   logo: string | null;
-  blog_url?: string; // 🔧 Added: Layout/Page se blog_url accept karne ke liye type add kiya
+  blog_url?: string;
 }
 
 const Header = async ({
@@ -25,9 +25,8 @@ const Header = async ({
   cat_slug,
   logo,
   promotion_slug,
-  blog_url, // 🔧 Added: Prop destructure kiya
+  blog_url,
 }: Props) => {
-  // 1. Fetch all data on the Server
   const [categories, merchants, events, promotions] = await Promise.all([
     apiNavCategory(company_id).then((res) => res?.data),
     apiGetNavMerchants(company_id).then((res) => res?.data),
