@@ -60,7 +60,7 @@ const OfferCard = async ({ offer, mer_slug_type, mer_slug, type }: Props) => {
               src={imageSrc}
               alt={brandName}
               fill
-              className="object-contain p-10 transition-transform duration-1000 group-hover:scale-110 opacity-[0.05]"
+              className="object-contain p-10 transition-transform duration-1000 group-hover:scale-110 opacity-[0.1] group-hover:opacity-20"
               sizes="(max-width: 768px) 100vw, 33vw"
             />
           )}

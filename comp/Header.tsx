@@ -37,7 +37,7 @@ const Header = async ({
   const companyLogo = getBaseImageUrl(
     domain,
     logo,
-    "/themes/Theme_2/images/logo/logo-dark.png",
+    "/themes/Theme_9/images/savylogo.png",
   );
 
   return (

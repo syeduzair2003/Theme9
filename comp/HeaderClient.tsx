@@ -49,7 +49,7 @@ const HeaderClient = ({
     Products: "/all-products",
     Events: "/events",
     Promotion: `/${promotion_slug}`,
-    Blog: blog_url || "https://blog.gettopdiscounts.com",
+    Blog: `${blog_url}`,
   };
 
   const checkActive = (name: string) => {

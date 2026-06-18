@@ -5,14 +5,12 @@ import StepsToAvail from "@/components/shared/StepsToAvail";
 import cookieService from "@/services/CookiesService";
 import { apiCompanyUpdatedData } from "@/apis/user";
 import HomePageSchema from "@/components/shared/SchemaScripts/HomepageSchema";
-// import MerchantsCarousel from '../comp/MerchantsCarousel';
 import BannerSection from "../comp/BannerSection";
 import FeatureDeals from "../comp/FeatureDeals";
 import ExploreCategory from "../comp/ExploreCategory";
 import PremimumBrand from "../comp/PremiumBrands";
 import Subscribe from "../comp/Subscribe";
 import HomepageFAQs from "../comp/HomepageFAQs";
-import Footer from "../comp/Footer";
 import { apiGetTopMerchants } from "@/apis/page_optimization";
 import HomeBlogSection from "../comp/HomeBlogSection";
 import HomeEventSection from "../comp/HomeEventSection";
@@ -38,7 +36,13 @@ const Home = async () => {
   return (
     // <Suspense fallback={<Loader />} >
     <div className="theme-4">
-      <BannerSection merchants={merchants} />
+      {c_data?.slider_status == 1 && (
+        <CompanyBanner
+          domain={companyDomain.domain}
+          companyId={c_data?.unique_id}
+        />
+      )}
+      <BannerSection merchants={merchants} companyId={c_data?.unique_id} />
       <FeatureDeals
         companyId={c_data?.unique_id}
         mer_slug_type={c_data?.slug_type}
