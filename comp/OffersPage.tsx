@@ -209,7 +209,7 @@ const OffersPage = async ({
                 <div className="flex flex-col">
                   {/* Header / Logo Area */}
                   <div className="relative h-28 flex items-center justify-center bg-[#FDFCF0]/60 border-b border-[#800000]/5">
-                    <div className="relative w-20 h-20 transform group-hover:scale-110 transition-transform duration-700">
+                    <div className="relative w-60 h-40 transform group-hover:scale-110 transition-transform duration-700">
                       <Image
                         className="object-contain"
                         alt={merchant_details?.data?.merchant_name}
@@ -219,7 +219,7 @@ const OffersPage = async ({
                           "",
                         )}
                         fill
-                        sizes="120px"
+                        sizes="180px"
                         priority
                       />
                     </div>

@@ -5,6 +5,7 @@ import { apiGetTopCategories } from "@/apis/page_optimization";
 import { getBaseImageUrl } from "@/constants/hooks";
 import FooterNewsletter from "./FooterNewsletter";
 import cookieService from "@/services/CookiesService";
+import DisclaimerClient from "./DisclaimerClient";
 import BackToTopButton from "./BackToTopButton";
 import { apiGetDisclaimer } from "@/apis/user";
 import {
@@ -73,7 +74,7 @@ const Footer = async ({
                 src={getBaseImageUrl(
                   companyDomain.domain,
                   companyFooterLogo,
-                  "/themes/Theme_3/images/logo.png",
+                  "/themes/Theme_9/images/savylogo2.png",
                 )}
                 height={80}
                 width={200}
@@ -106,7 +107,6 @@ const Footer = async ({
                       alt={platform.label}
                       width={24}
                       height={24}
-                      // className="opacity-60 group-hover:opacity-100 transition-opacity"
                     />
                   </Link>
                 );
@@ -275,87 +275,34 @@ const Footer = async ({
           <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-start justify-between gap-10">
             {/* Left Side: Copyright & Registration Info */}
             <div className="w-full lg:w-1/4 shrink-0 text-center lg:text-left">
-              <div className="text-[10px] tracking-[0.2em] font-black text-[#FFFDF5]/40 uppercase space-y-2">
+              <div className="text-[11px] font-bold text-slate-500">
                 {companyDomain.domain === "gettopdiscounts.com" ? (
                   <>
-                    <div className="text-[#FFFDF5] text-xs">
-                      © {new Date().getFullYear()} GETTOPDISCOUNTS LLC
+                    <div className="text-[#FFFDF5]">
+                      <span className="font-extrabold text-2xl">Savylo.</span>{" "}
+                      <br />© {new Date().getFullYear()} All Rights Reserved.
                     </div>
                     <div className="flex items-center justify-center lg:justify-start gap-2 opacity-60">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#800000]"></span>
-                      <span className="font-extrabold text-[#FFFDF5]">U.S. REGISTERED</span>
+                      <span className="font-extrabold text-[#FFFDF5]">
+                        Operated by Odd Technologies Pvt. Ltd.
+                        <br />
+                        <span className="text-[#FFFDF5]">
+                          Supported by CODERLAB TECH LLC.
+                        </span>
+                      </span>
                     </div>
                   </>
                 ) : (
-                  <>
-                    <div className="text-[#FFFDF5] text-xs uppercase">
-                      {companyName}
-                    </div>
-                    <div className="opacity-60">
-                      © {new Date().getFullYear()} ALL RIGHTS RESERVED
-                    </div>
-                  </>
+                  <></>
                 )}
               </div>
             </div>
 
             {/* Right Side: Disclaimer Box */}
             {disclaimer?.disclaimer?.disclaimer && (
-              <div className="relative flex-1 w-full pb-4 p-6 md:p-6 rounded-[2rem] bg-black border border-[#FFFDF5]/5 hover:border-[#FFFDF5]/10 transition-all duration-500 group/disc backdrop-blur-sm">
-                {/* Dynamic Disclaimer Heading Badge (Based on Screenshot Image_4) */}
-                <div className="absolute -top-4 left-6 lg:left-8 z-20 flex items-center group/badge cursor-default">
-                  {/* 1. Yellow Warning Triangle with Exclamation */}
-                  <div className="relative z-30 shrink-0 transform -rotate-[5deg] -translate-x-1 hover:rotate-0 transition-transform duration-300">
-                    <svg
-                      viewBox="0 0 24 24"
-                      className="w-10 h-10 md:w-11 md:h-11 drop-shadow-lg"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M12.0122 3.19302C12.3392 2.62886 13.1608 2.62886 13.4878 3.19302L21.4334 16.9032C21.7588 17.4646 21.3533 18.1667 20.7013 18.1667H3.29868C2.64672 18.1667 2.2412 17.4646 2.56658 16.9032L10.5122 3.19302H12.0122Z"
-                        fill="#FBBF24" /* Tailwing Amber-400 (Screenshot yellow) */
-                        stroke="#FBBF24"
-                        strokeWidth="0.5"
-                      />
-                      <rect
-                        x="11.5"
-                        y="7.5"
-                        width="2.5"
-                        height="6.5"
-                        rx="1.25"
-                        fill="white"
-                      />
-                      <circle cx="12.75" cy="16.25" r="1.25" fill="white" />
-                    </svg>
-                  </div>
-
-                  <div className="relative -ml-4 pl-6 pr-6 py-2.5 bg-[#E62E2E] rounded-full shadow-2xl border-t border-[#FFFDF5]/10 group-hover/badge:bg-[#EF4444] transition-colors overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover/badge:translate-x-full transition-transform duration-1000" />
-
-                    <span
-                      className="relative z-10 text-[#FFFDF5] font-black text-xs md:text-sm uppercase tracking-tight flex items-center leading-none"
-                      style={{
-                        fontFamily:
-                          'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
-                        fontStretch: "condensed",
-                        fontWeight: 1000,
-                      }}
-                    >
-                      DISCLAIMER
-                    </span>
-                  </div>
-                </div>
-
-                <div className="relative z-10 pt-3">
-                  <div
-                    className="text-[11px] md:text-[12px] leading-relaxed text-[#FFFDF5]/80 group-hover/disc:text-[#FFFDF5]/50 transition-colors italic text-left"
-                    dangerouslySetInnerHTML={{
-                      __html: disclaimer?.disclaimer?.disclaimer || "",
-                    }}
-                  />
-                </div>
-              </div>
+              <DisclaimerClient
+                htmlContent={disclaimer.disclaimer.disclaimer}
+              />
             )}
           </div>
         </div>

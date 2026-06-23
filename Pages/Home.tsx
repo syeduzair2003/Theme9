@@ -17,6 +17,7 @@ import HomeEventSection from "../comp/HomeEventSection";
 import BrandedProductsHome from "../comp/BrandedProductsHome";
 import PopularCoupons from "../comp/PopularCoupons";
 import TrendingProducts from "../comp/TrendingProducts";
+import { keywordsAction } from "@/app/actions";
 const Home = async () => {
   const companyDomain = await cookieService.get("domain");
   const c_data = (await apiCompanyUpdatedData(companyDomain)).data;
