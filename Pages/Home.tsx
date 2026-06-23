@@ -37,12 +37,12 @@ const Home = async () => {
   return (
     // <Suspense fallback={<Loader />} >
     <div className="theme-4">
-      {c_data?.slider_status == 1 && (
+      {/* {c_data?.slider_status == 1 && (
         <CompanyBanner
           domain={companyDomain.domain}
           companyId={c_data?.unique_id}
         />
-      )}
+      )} */}
       <BannerSection merchants={merchants} companyId={c_data?.unique_id} />
       <FeatureDeals
         companyId={c_data?.unique_id}

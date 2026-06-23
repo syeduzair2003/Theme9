@@ -178,10 +178,16 @@ const page = async () => {
               </div>
             ))
           ) : (
-            <div className="col-span-full py-32 flex flex-col items-center justify-center bg-white/50 backdrop-blur-sm border-2 border-dashed border-[#F5F5DC] rounded-[4rem]">
-              <div className="w-16 h-16 border-4 border-[#800000]/10 border-t-[#800000] rounded-full animate-spin mb-6"></div>
-              <p className="text-[#800000] font-black text-xs uppercase tracking-[0.4em] animate-pulse">
-                Syncing Partner Network...
+            <div className="col-span-full py-20 px-8 flex flex-col items-center justify-center bg-white/60 backdrop-blur-sm border-2 border-dashed border-[#EADDCA] rounded-[3rem] text-center max-w-xl mx-auto w-full">
+              <div className="w-12 h-12 rounded-full bg-[#800000]/5 flex items-center justify-center text-[#800000] font-black text-lg mb-4">
+                ✦
+              </div>
+              <h3 className="text-lg font-black text-slate-900 uppercase tracking-wider mb-2">
+                No Brands Available
+              </h3>
+              <p className="text-slate-500 text-sm font-semibold max-w-xs leading-relaxed opacity-80">
+                We are currently refreshing our collection directory. Exclusive
+                premium deals and collections will be live shortly.
               </p>
             </div>
           )}

@@ -4,6 +4,7 @@ import { apiGetTopCategories } from "@/apis/page_optimization";
 import { splitHeading } from "@/constants/hooks";
 import { ArrowRight } from "lucide-react";
 import TopCategories from "./TopCategories";
+import CategorySliderClient from "./CategorySliderClient";
 
 interface Props {
   companyId: string;
@@ -69,14 +70,14 @@ const ExploreCategory = async ({ companyId, cat_slug, slug_type }: Props) => {
           </Link>
         </div>
 
-        {/* Categories Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {topCategoriesResponse.categories
-            .slice(0, 8)
-            .map((category: any, index: number) => (
-              <TopCategories key={index} category={category} />
-            ))}
-        </div>
+{/* 🌟 Upgraded to ALL Categories Dynamic Auto Infinite Slider */}
+<div className="w-full max-w-7xl mx-auto py-10 md:py-14 overflow-hidden">
+  <CategorySliderClient>
+    {topCategoriesResponse.categories.map((category: any, index: number) => (
+      <TopCategories key={index} category={category} />
+    ))}
+  </CategorySliderClient>
+</div>
       </div>
     </section>
   );
