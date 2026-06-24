@@ -196,7 +196,7 @@ const CategoryMerchantPage = async ({ params }: Props) => {
       {/* Left Content Coupons */}
       <div className="w-full lg:w-2/3 xl:w-3/4 order-1 lg:order-1">
         <div className="mb-8 md:mb-12 text-center lg:text-left">
-          <h2 className="text-2xl md:text-4xl font-black text-[#1A1A1A] mb-3 md:mb-4 tracking-tighter leading-tight">
+          <h2 className="text-2xl md:text-3xl font-black text-[#1A1A1A] mb-3 md:mb-4 tracking-tighter leading-tight">
             {getRandomCategoryCouponsTitle(catRes?.name)}
           </h2>
           <div className="w-16 md:w-24 h-[3px] bg-[#800000] rounded-full mx-auto lg:mx-0"></div>

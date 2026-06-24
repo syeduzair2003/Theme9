@@ -5,9 +5,10 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { getMerchantHref, getProductDetailHref } from "@/constants/hooks";
-import EventOfferCard from "@/components/Theme-9/comp/EventOfferCard";
+import EventsOfferCard from "@/components/Theme-9/comp/EventOfferCard"; // 👈 Named accurately as reference
 import { apiGetMerchantUniqueId } from "@/apis/merchant";
 import ProductCategorySchema from "@/components/shared/SchemaScripts/ProductCategorySchema";
+import EventOfferCard from "@/components/Theme-9/comp/EventOfferCard";
 
 interface Props {
   slug: string; // merchant slug e.g. "amazon.com"
@@ -24,8 +25,8 @@ const CategoryOffersPage = async ({
   slugType,
   category,
 }: Props) => {
-  const domainData = await cookieService.get("domain");
-  const companyDomain = domainData?.domain;
+  // 1. 🌟 Reference file ke mutabiq domain fetch kiya
+  const companyDomain = await cookieService.get("domain");
 
   const [products, merRes] = await Promise.all([
     apiGetCategoryProductsOffer(companyId, slug, category).then(
@@ -193,22 +194,28 @@ const CategoryOffersPage = async ({
 
           {products?.length > 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-8 gap-y-16">
-              {products.map((item, i) => (
+              {products.map((product, item) => (
                 <div
-                  key={i}
+                  key={item}
                   className="w-full group/item transition-all duration-500 hover:-translate-y-3"
                 >
+                  {/* 2. 🌟 Reference file ke mutabiq absolute identical prop passing */}
                   <EventOfferCard
-                    product={item}
-                    merchantHref={getMerchantHref(merRes, storeSlug, slugType)}
+                    key={item}
+                    product={product}
+                    merchantHref={getMerchantHref(
+                      merRes,
+                      storeSlug,
+                      slugType,
+                    )}
                     domain={companyDomain}
                     merchant_name={merRes?.merchant_name}
                     merchant_logo={merRes?.merchant_logo}
                     productDetailUrl={getProductDetailHref(
                       merRes,
                       slugType,
-                      item?.slug,
-                      item?.category?.slug,
+                      product?.slug,
+                      product?.category?.slug,
                     )}
                   />
                 </div>

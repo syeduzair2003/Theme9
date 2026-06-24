@@ -22,6 +22,7 @@ import {
 const EventOfferCard = ({
   product,
   merchantHref,
+  productDetailUrl, // 👈 1. Prop receive kiya dynamic slug route ke liye
   domain,
   merchant_name,
   merchant_logo,
@@ -86,8 +87,18 @@ const EventOfferCard = ({
           </Link>
         </div>
 
+        {/* 2. 🌟 Title Clickable link banaya with smooth color hover effect */}
         <h5 className="text-[13px] font-bold text-[#1A1A1A] leading-tight mb-2 line-clamp-2 min-h-[32px]">
-          {discardHTMLTags(product?.offer_title)}
+          {productDetailUrl ? (
+            <Link 
+              href={productDetailUrl} 
+              className="hover:text-[#800000] transition-colors duration-200 block"
+            >
+              {discardHTMLTags(product?.offer_title)}
+            </Link>
+          ) : (
+            discardHTMLTags(product?.offer_title)
+          )}
         </h5>
 
         <div className="flex items-center justify-center gap-1 text-[12px] font-bold text-slate-600 mb-3">
