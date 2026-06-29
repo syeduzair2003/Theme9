@@ -34,8 +34,7 @@ const AffiliateDisclosure = async () => {
                 <span className="text-[#800000]">{pageData?.page_name}</span>
               </nav>
 
-              {/* Heading */}
-              <h1 className="text-4xl md:text-5xl font-black text-[#1A1A1A] leading-[1.1] tracking-tight">
+              <h1 className="text-3xl md:text-4xl font-black text-[#1A1A1A] leading-[1.1] tracking-tight">
                 Affiliate <span className="text-[#800000]">Disclosure</span>
               </h1>
             </div>
@@ -63,53 +62,57 @@ const AffiliateDisclosure = async () => {
           </div>
         </div>
 
-        {/* Decorative Background Elements */}
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#800000]/5 rounded-full blur-[120px]" />
         <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-[#EADDCA]/30 rounded-full blur-[100px]" />
       </section>
+
       {/* Content Section */}
       <section className="px-6 pb-32">
         <div className="max-w-4xl mx-auto">
-          <div className="relative bg-white rounded-[2.5rem] border border-[#EADDCA] p-8 md:p-16 shadow-2xl shadow-[#800000]/5">
-            <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-14 h-14 bg-[#800000] rounded-2xl shadow-xl shadow-[#800000]/20 flex items-center justify-center text-[#FEF9E7]">
+          <div className="relative bg-white rounded-[2.5rem] border border-[#EADDCA]/60 p-6 md:p-12 shadow-2xl shadow-[#800000]/5">
+            <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-[#800000] rounded-xl shadow-xl shadow-[#800000]/20 flex items-center justify-center text-[#FEF9E7]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                strokeWidth={2}
+                strokeWidth={2.5}
                 stroke="currentColor"
-                className="w-7 h-7"
+                className="w-5 h-5"
               >
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
+                  path="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
                   d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
                 />
               </svg>
             </div>
 
             <article
-              className="prose prose-slate lg:prose-lg max-w-none 
-                            prose-headings:text-[#1A1A1A] prose-headings:font-black prose-headings:tracking-tight 
-                            prose-p:text-slate-600 prose-p:leading-relaxed prose-p:mb-6
-                            prose-strong:text-[#800000] prose-strong:font-bold
-                            prose-a:text-[#800000] prose-a:font-semibold prose-a:no-underline hover:prose-a:underline
-                            prose-ul:list-disc prose-li:marker:text-[#800000] prose-li:text-slate-600"
+              className="prose prose-sm prose-slate max-w-none 
+                          prose-headings:text-[#1A1A1A] prose-headings:font-extrabold prose-headings:tracking-tight 
+                          prose-h1:text-lg md:text-xl
+                          prose-h2:text-base md:text-lg
+                          prose-h3:text-sm md:text-base
+                          prose-headings:mt-5 prose-headings:mb-2.5
+                          prose-p:text-sm prose-p:leading-relaxed prose-p:text-slate-600 prose-p:mb-3.5
+                          prose-strong:text-[#800000] prose-strong:font-bold
+                          prose-a:text-[#800000] prose-a:font-semibold prose-a:no-underline hover:prose-a:underline
+                          prose-ul:list-disc prose-li:marker:text-[#800000] prose-li:text-sm prose-li:text-slate-600"
               dangerouslySetInnerHTML={{
                 __html:
                   pageData?.page_description ||
-                  "<p class='text-center'>Content not available.</p>",
+                  "<p class='text-center text-sm text-slate-400'>Content not available.</p>",
               }}
             />
           </div>
 
-          {/* Bottom Support Callout */}
-          <div className="mt-12 text-center">
-            <p className="text-slate-400 text-xs font-bold uppercase tracking-[0.15em]">
+          <div className="mt-10 text-center">
+            <p className="text-slate-400 text-[11px] font-bold uppercase tracking-[0.15em]">
               Have questions about our partnerships?{" "}
               <Link
                 href="/contact-us"
-                className="text-[#800000] hover:text-[#a00000] transition-colors no-underline"
+                className="text-[#800000] hover:text-[#a00000] transition-colors no-underline inline-block ml-1"
               >
                 Contact our support team
               </Link>

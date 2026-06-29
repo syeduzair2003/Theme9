@@ -19,40 +19,34 @@ const TermsConditions = async () => {
 
         <div className="absolute bottom-0 left-0 h-1.5 w-full bg-gradient-to-r from-[#800000] via-[#a00000] to-[#800000] z-20" />
 
-        <div className="max-w-7xl mx-auto px-8 py-12 md:py-20 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-7xl mx-auto px-8 py-16 md:py-16 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center py-1.5">
             {/* Left Content */}
-            <div className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-6">
-              <div className="space-y-4">
-                {/* Breadcrumb */}
-                <nav className="flex items-center justify-center lg:justify-start gap-3 text-[11px] font-black uppercase tracking-[0.2em]">
-                  <Link
-                    href="/"
-                    className="no-underline text-slate-400 hover:text-[#800000] transition-colors"
-                  >
-                    Home
-                  </Link>
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#800000]"></span>
-                  <span className="text-[#800000] uppercase tracking-[0.15em]">
-                    {pageData?.page_name}
-                  </span>
-                </nav>
+            <div className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-4">
+              {/* Breadcrumb */}
+              <nav className="flex items-center justify-center lg:justify-start gap-3 text-[11px] font-black uppercase tracking-[0.2em]">
+                <Link
+                  href="/"
+                  className="no-underline text-slate-400 hover:text-[#800000] transition-colors"
+                >
+                  Home
+                </Link>
+                <span className="w-1.5 h-1.5 rounded-full bg-[#800000]"></span>
+                <span className="text-[#800000] uppercase tracking-[0.15em]">
+                  {pageData?.page_name}
+                </span>
+              </nav>
 
-                {/* Heading */}
-                <h1 className="text-4xl md:text-5xl font-black text-[#1A1A1A] leading-[1.1] tracking-tight">
-                  Terms Of <span className="text-[#800000]">Services</span>
-                </h1>
-              </div>
+              <h1 className="text-3xl md:text-4xl font-black text-[#1A1A1A] leading-[1.1] tracking-tight">
+                Terms Of <span className="text-[#800000]">Services</span>
+              </h1>
             </div>
 
             {/* Right Image Section */}
             <div className="hidden order-1 lg:order-2 lg:flex justify-end relative group translate-y-6 scale-90">
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 border border-[#800000]/10 rounded-full" />
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 border-2 border-dashed border-[#EADDCA]/40 rounded-full" />
-
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-56 h-56 bg-[#800000]/5 rounded-full blur-3xl group-hover:bg-[#800000]/15 transition-all duration-700" />
-
-              {/* Main Image Container */}
               <div className="relative transition-all duration-500 group-hover:scale-105 group-hover:-translate-y-2">
                 <Image
                   src="/themes/Theme_3/images/banner-illus-15.png"
@@ -72,42 +66,47 @@ const TermsConditions = async () => {
       </section>
 
       {/* Content Section */}
-      <section className="max-w-5xl mx-auto px-6 pb-24">
-        <div className="bg-white rounded-[2.5rem] border border-[#EADDCA] shadow-2xl shadow-[#800000]/5 overflow-hidden">
-          <div className="h-2 w-full bg-[#800000]" />
+      <section className="max-w-4xl mx-auto px-6 pb-24">
+        <div className="bg-white rounded-[2.5rem] border border-[#EADDCA]/60 shadow-2xl shadow-[#800000]/5 overflow-hidden">
+          <div className="h-1.5 w-full bg-[#800000]" />
 
-          <div className="p-8 md:p-16 lg:p-20">
+          <div className="p-6 md:p-12">
             <article
-              className="prose prose-slate lg:prose-lg max-w-none 
-                   prose-headings:text-[#1A1A1A] prose-headings:font-black prose-headings:tracking-tight
-                   prose-p:text-slate-600 prose-p:leading-relaxed prose-p:mb-6
-                   prose-strong:text-[#800000] prose-strong:font-bold
-                   prose-li:text-slate-600 prose-li:marker:text-[#800000]
-                   prose-a:text-[#800000] prose-a:font-semibold prose-a:no-underline hover:prose-a:underline
-                   prose-img:rounded-[2rem] prose-img:shadow-2xl
-                   prose-hr:border-[#EADDCA]"
+              className="prose prose-sm prose-slate max-w-none 
+                          prose-headings:text-[#1A1A1A] prose-headings:font-black prose-headings:tracking-tight
+                          prose-h1:text-lg md:text-xl
+                          prose-h2:text-base md:text-lg
+                          prose-h3:text-sm md:text-base
+                          prose-headings:mt-5 prose-headings:mb-2.5
+                          prose-p:text-sm prose-p:leading-relaxed prose-p:text-slate-600 prose-p:mb-3.5
+                          prose-strong:text-[#800000] prose-strong:font-bold
+                          prose-li:text-sm prose-li:text-slate-600 prose-li:marker:text-[#800000] prose-ul:list-disc
+                          prose-a:text-[#800000] prose-a:font-semibold prose-a:no-underline hover:prose-a:underline
+                          prose-img:rounded-[2rem] prose-img:shadow-2xl
+                          prose-hr:border-[#EADDCA]"
               dangerouslySetInnerHTML={{
-                __html: pageData?.page_description || "Content not available.",
+                __html:
+                  pageData?.page_description ||
+                  "<p class='text-center text-sm text-slate-400'>Content not available.</p>",
               }}
             />
           </div>
 
-          <div className="px-8 py-6 bg-[#FEF9E7]/30 border-t border-[#EADDCA] text-center">
-            <p className="text-slate-400 text-sm italic">
+          <div className="px-6 py-4 bg-[#FEF9E7]/30 border-t border-[#EADDCA]/60 text-center">
+            <p className="text-slate-400 text-xs italic">
               By continuing to use our services, you agree to the terms
               mentioned above.
             </p>
           </div>
         </div>
 
-        {/* Bottom Support Callout */}
-        <div className="mt-12 text-center space-y-3">
-          <p className="text-slate-500 font-medium">
+        <div className="mt-10 text-center space-y-2">
+          <p className="text-slate-500 text-sm font-medium">
             Have questions about our terms?
           </p>
           <Link
             href="/contact-us"
-            className="inline-flex items-center text-[#800000] font-bold hover:gap-2 transition-all group no-underline"
+            className="inline-flex items-center text-sm text-[#800000] font-bold hover:gap-2 transition-all group no-underline"
           >
             Contact Legal Support
             <span className="ml-1 group-hover:translate-x-1 transition-transform">

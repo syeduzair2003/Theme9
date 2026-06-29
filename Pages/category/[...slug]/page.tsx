@@ -86,53 +86,60 @@ const CategoryMerchantPage = async ({ params }: Props) => {
     <div className="bg-[#fffde0] min-h-screen">
       {/* PREMIUM HERO SECTION */}
       <section className="relative overflow-hidden bg-[#800000] border-b border-[#800000]/20 pt-28 md:pt-24 pb-16 md:pb-24 rounded-b-[2.5rem] md:rounded-b-[4rem] shadow-2xl">
-  {/* Decorative Circle */}
-  <div className="absolute top-0 right-0 -mr-20 -mt-20 opacity-20 text-[#fffde0] hidden md:block">
-    <svg width="400" height="400" fill="currentColor">
-      <circle cx="200" cy="200" r="200" />
-    </svg>
-  </div>
+        {/* Decorative Circle */}
+        <div className="absolute top-0 right-0 -mr-20 -mt-20 opacity-20 text-[#fffde0] hidden md:block">
+          <svg width="400" height="400" fill="currentColor">
+            <circle cx="200" cy="200" r="200" />
+          </svg>
+        </div>
 
-  <div className="container mx-auto px-4 relative z-10">
-    {/* min-h-fit taaki content ki height ke mutabiq box barh jaye */}
-    <div className="flex flex-col lg:flex-row items-center min-h-fit lg:h-[45vh] justify-between gap-6 md:gap-10 pb-20 lg:pb-0 text-center lg:text-left">
-      <div className="w-full lg:w-7/12 space-y-4 md:space-y-6">
-        
-        {/* Breadcrumbs - Hidden on small mobile to save space if you want, or kept simple */}
-        <nav className="flex items-center justify-center lg:justify-start space-x-2 text-[10px] md:text-[11px] font-black tracking-[0.2em] text-[#fffde0]/70 mb-2 uppercase">
-          <Link href="/" className="no-underline hover:text-white transition-colors">Home</Link>
-          <div className="w-1 h-1 rounded-full bg-[#fffde0]/40 shrink-0" />
-          <Link href="/category" className="no-underline hover:text-white transition-colors">Category</Link>
-          <div className="w-1 h-1 rounded-full bg-[#fffde0]/40 shrink-0" />
-          <span className="text-white font-black truncate max-w-[120px]">
-            {catRes?.name}
-          </span>
-        </nav>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="flex flex-col lg:flex-row items-center min-h-fit lg:h-[45vh] justify-between gap-6 md:gap-10 pb-20 lg:pb-0 text-center lg:text-left">
+            <div className="w-full lg:w-7/12 space-y-4 md:space-y-6">
+              <nav className="flex items-center justify-center lg:justify-start space-x-2 text-[10px] md:text-[11px] font-black tracking-[0.2em] text-[#fffde0]/70 mb-2 uppercase">
+                <Link
+                  href="/"
+                  className="no-underline hover:text-white transition-colors"
+                >
+                  Home
+                </Link>
+                <div className="w-1 h-1 rounded-full bg-[#fffde0]/40 shrink-0" />
+                <Link
+                  href="/category"
+                  className="no-underline hover:text-white transition-colors"
+                >
+                  Category
+                </Link>
+                <div className="w-1 h-1 rounded-full bg-[#fffde0]/40 shrink-0" />
+                <span className="text-white font-black truncate max-w-[120px]">
+                  {catRes?.name}
+                </span>
+              </nav>
 
-        {/* Heading */}
-        <h1 className="text-3xl md:text-5xl lg:text-6xl font-black leading-[1.2] md:leading-[1.1] text-white tracking-tighter">
-          {getRandomCategorySeoTitle(catRes?.name)}
-        </h1>
+              {/* Heading */}
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-black leading-[1.2] md:leading-[1.1] text-white tracking-tighter">
+                {getRandomCategorySeoTitle(catRes?.name)}
+              </h1>
 
-        {/* Description */}
-        <p className="text-sm md:text-lg text-[#fffde0]/80 max-w-xl font-medium leading-relaxed mx-auto lg:mx-0 px-2 md:px-0">
-          Save big with our hand-picked deals and verified promo codes for top brands in{" "}
-          <span className="text-white underline decoration-[#fffde0]/30">
-            {catRes?.name}
-          </span>
-          .
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
+              {/* Description */}
+              <p className="text-sm md:text-lg text-[#fffde0]/80 max-w-xl font-medium leading-relaxed mx-auto lg:mx-0 px-2 md:px-0">
+                Save big with our hand-picked deals and verified promo codes for
+                top brands in{" "}
+                <span className="text-white underline decoration-[#fffde0]/30">
+                  {catRes?.name}
+                </span>
+                .
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* TRENDING MERCHANTS SECTION */}
       <section className="relative -mt-24 z-30 pb-10">
         <div className="container mx-auto px-4">
           {/* Main Card */}
           <div className="bg-white/90 backdrop-blur-2xl rounded-[4rem] shadow-[0_30px_100px_-20px_rgba(128,0,0,0.15)] p-8 md:p-14 border border-white">
-            {/* Header with Badge */}
             <div className="flex flex-col md:flex-row items-center justify-between mb-12 gap-4">
               <div className="flex flex-col items-center md:items-start">
                 <span className="text-[#800000] text-[10px] font-black uppercase tracking-[0.4em] mb-3 bg-[#800000]/5 px-4 py-1.5 rounded-full border border-[#800000]/10">
@@ -189,66 +196,63 @@ const CategoryMerchantPage = async ({ params }: Props) => {
       </section>
 
       {/* MAIN CONTENT SECTION */}
-<section className="py-10 md:py-20 bg-[#fffde0]">
-  <div className="container mx-auto px-4">
-    <div className="flex flex-col lg:flex-row gap-8 md:gap-12">
-      
-      {/* Left Content Coupons */}
-      <div className="w-full lg:w-2/3 xl:w-3/4 order-1 lg:order-1">
-        <div className="mb-8 md:mb-12 text-center lg:text-left">
-          <h2 className="text-2xl md:text-3xl font-black text-[#1A1A1A] mb-3 md:mb-4 tracking-tighter leading-tight">
-            {getRandomCategoryCouponsTitle(catRes?.name)}
-          </h2>
-          <div className="w-16 md:w-24 h-[3px] bg-[#800000] rounded-full mx-auto lg:mx-0"></div>
-        </div>
-        
-        <CategoryOffers
-          category_id={categoryId}
-          url_slug={categorySlug?.split("/")}
-          page={page?.toString()}
-          company_id={c_data?.unique_id}
-          mer_slug={c_data?.store_slug}
-          mer_slug_type={c_data?.slug_type}
-        />
-      </div>
+      <section className="py-10 md:py-20 bg-[#fffde0]">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col lg:flex-row gap-8 md:gap-12">
+            <div className="w-full lg:w-2/3 xl:w-3/4 order-1 lg:order-1">
+              <div className="mb-8 md:mb-12 text-center lg:text-left">
+                <h2 className="text-2xl md:text-3xl font-black text-[#1A1A1A] mb-3 md:mb-4 tracking-tighter leading-tight">
+                  {getRandomCategoryCouponsTitle(catRes?.name)}
+                </h2>
+                <div className="w-16 md:w-24 h-[3px] bg-[#800000] rounded-full mx-auto lg:mx-0"></div>
+              </div>
 
-      {/* Right Sidebar - order-2 on mobile (automatically goes below offers) */}
-      <aside className="w-full lg:w-1/3 xl:w-1/4 order-2 lg:order-2 space-y-8 md:space-y-10">
-        {categories?.categories?.length > 0 && (
-          <div className="bg-white rounded-[2rem] md:rounded-[2.5rem] p-6 md:p-8 shadow-[0_20px_50px_rgba(0,0,0,0.03)] border border-[#800000]/5 border-t-[6px] border-t-[#800000]">
-            <CategorySidebar
-              categories={categories?.categories}
-              cat_slug="category"
-              slug_type={c_data?.slug_type}
-              parentCategory={categories?.parent_category}
-            />
+              <CategoryOffers
+                category_id={categoryId}
+                url_slug={categorySlug?.split("/")}
+                page={page?.toString()}
+                company_id={c_data?.unique_id}
+                mer_slug={c_data?.store_slug}
+                mer_slug_type={c_data?.slug_type}
+              />
+            </div>
+
+            <aside className="w-full lg:w-1/3 xl:w-1/4 order-2 lg:order-2 space-y-8 md:space-y-10">
+              {categories?.categories?.length > 0 && (
+                <div className="bg-white rounded-[2rem] md:rounded-[2.5rem] p-6 md:p-8 shadow-[0_20px_50px_rgba(0,0,0,0.03)] border border-[#800000]/5 border-t-[6px] border-t-[#800000]">
+                  <CategorySidebar
+                    categories={categories?.categories}
+                    cat_slug="category"
+                    slug_type={c_data?.slug_type}
+                    parentCategory={categories?.parent_category}
+                  />
+                </div>
+              )}
+
+              {bannerResponse?.offers?.length > 0 &&
+                initialFiltered.length > 0 && (
+                  <div className="bg-[#FDFCF0] rounded-[2rem] md:rounded-[2.5rem] p-6 md:p-8 shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-[#800000]/5 text-[#1A1A1A] overflow-hidden relative">
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-[#800000]/5 blur-3xl rounded-full -mr-16 -mt-16"></div>
+
+                    <h4 className="text-lg md:text-xl font-black mb-6 md:mb-8 flex items-center gap-3 relative z-10 tracking-tight text-[#1A1A1A]">
+                      <span className="w-1.5 h-6 bg-[#800000] rounded-full"></span>
+                      Exclusive Deals
+                    </h4>
+
+                    <VerticalCategoryOfferBanner
+                      bannerResponse={bannerResponse?.offers}
+                      domain={companyDomain.domain}
+                      mer_slug={c_data?.store_slug}
+                      slug_type={c_data?.slug_type}
+                      categoryId={categoryId}
+                      companyId={c_data?.unique_id}
+                    />
+                  </div>
+                )}
+            </aside>
           </div>
-        )}
-
-       {bannerResponse?.offers?.length > 0 && initialFiltered.length > 0 && (
-  <div className="bg-[#FDFCF0] rounded-[2rem] md:rounded-[2.5rem] p-6 md:p-8 shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-[#800000]/5 text-[#1A1A1A] overflow-hidden relative">
-    
-    <div className="absolute top-0 right-0 w-32 h-32 bg-[#800000]/5 blur-3xl rounded-full -mr-16 -mt-16"></div>
-    
-    <h4 className="text-lg md:text-xl font-black mb-6 md:mb-8 flex items-center gap-3 relative z-10 tracking-tight text-[#1A1A1A]">
-      <span className="w-1.5 h-6 bg-[#800000] rounded-full"></span>
-      Exclusive Deals
-    </h4>
-
-    <VerticalCategoryOfferBanner
-      bannerResponse={bannerResponse?.offers}
-      domain={companyDomain.domain}
-      mer_slug={c_data?.store_slug}
-      slug_type={c_data?.slug_type}
-      categoryId={categoryId}
-      companyId={c_data?.unique_id}
-    />
-  </div>
-)}
-      </aside>
-    </div>
-  </div>
-</section>
+        </div>
+      </section>
 
       <CategoryMerchantPageSchema
         category_id={categoryId}

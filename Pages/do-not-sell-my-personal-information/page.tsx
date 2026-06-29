@@ -12,7 +12,7 @@ const PrivacyPage = async () => {
 
   return (
     <main className="min-h-screen bg-[#fffde0]">
-      {/* Header / Banner Section */}
+      {/* Banner Section */}
       <section className="relative mx-4 md:mx-10 mt-6 mb-12 overflow-hidden rounded-[2.5rem] bg-[#FDFBE7] border border-[#EADDCA]">
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#800000]/5 rounded-full blur-[120px] pointer-events-none" />
         <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-[#EADDCA]/30 rounded-full blur-[100px] pointer-events-none" />
@@ -38,8 +38,7 @@ const PrivacyPage = async () => {
                   </span>
                 </nav>
 
-                {/* Heading */}
-                <h1 className="text-4xl md:text-5xl font-black text-[#1A1A1A] leading-[1.1] tracking-tight">
+                <h1 className="text-3xl md:text-4xl font-black text-[#1A1A1A] leading-[1.1] tracking-tight">
                   Do Not Share
                   <br />{" "}
                   <span className="text-[#800000]">My Personal Info</span>
@@ -54,7 +53,6 @@ const PrivacyPage = async () => {
 
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-56 h-56 bg-[#800000]/5 rounded-full blur-3xl group-hover:bg-[#800000]/15 transition-all duration-700" />
 
-              {/* Main Image Container */}
               <div className="relative transition-all duration-500 group-hover:scale-105 group-hover:-translate-y-2">
                 <Image
                   src="/themes/Theme_3/images/banner-illus-15.png"
@@ -75,18 +73,16 @@ const PrivacyPage = async () => {
 
       {/* Content Section */}
       <section className="px-6 pb-32 bg-[#FEF9E7]/50">
-        {" "}
         <div className="max-w-4xl mx-auto">
-          {/* Content Container */}
-          <div className="relative bg-white rounded-[2.5rem] border border-[#EADDCA] p-8 md:p-16 shadow-2xl shadow-[#800000]/5">
-            <div className="absolute -top-6 left-1/2 -translate-x-1/2 lg:left-16 lg:translate-x-0 w-14 h-14 bg-[#800000] rounded-2xl shadow-xl shadow-[#800000]/20 flex items-center justify-center text-[#D1C7A7]">
+          <div className="relative bg-white rounded-[2.5rem] border border-[#EADDCA]/60 p-6 md:p-12 shadow-2xl shadow-[#800000]/5">
+            <div className="absolute -top-6 left-1/2 -translate-x-1/2 lg:left-16 lg:translate-x-0 w-12 h-12 bg-[#800000] rounded-xl shadow-xl shadow-[#800000]/20 flex items-center justify-center text-[#D1C7A7]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                strokeWidth={2}
+                strokeWidth={2.5}
                 stroke="currentColor"
-                className="w-7 h-7"
+                className="w-5 h-5"
               >
                 <path
                   strokeLinecap="round"
@@ -97,19 +93,24 @@ const PrivacyPage = async () => {
             </div>
 
             <article
-              className="prose prose-slate lg:prose-lg max-w-none 
+              className="prose prose-sm prose-slate max-w-none 
                    prose-headings:text-[#1A1A1A] prose-headings:font-black prose-headings:uppercase prose-headings:tracking-tight
-                   prose-p:text-slate-600 prose-p:leading-relaxed
-                   prose-strong:text-[#800000] prose-a:text-[#800000] 
-                   prose-a:no-underline hover:prose-a:underline
-                   prose-ul:list-disc prose-li:marker:text-[#800000]"
+                   prose-h1:text-lg md:text-xl
+                   prose-h2:text-base md:text-lg
+                   prose-h3:text-sm md:text-base
+                   prose-headings:mt-5 prose-headings:mb-2.5
+                   prose-p:text-sm prose-p:leading-relaxed prose-p:text-slate-600 prose-p:mb-3.5
+                   prose-strong:text-[#800000] prose-strong:font-bold
+                   prose-a:text-[#800000] prose-a:font-semibold prose-a:no-underline hover:prose-a:underline
+                   prose-ul:list-disc prose-li:marker:text-[#800000] prose-li:text-sm prose-li:text-slate-600"
               dangerouslySetInnerHTML={{
-                __html: pageData?.page_description || "Content not available.",
+                __html:
+                  pageData?.page_description ||
+                  "<p class='text-center text-sm text-slate-400'>Content not available.</p>",
               }}
             />
           </div>
 
-          {/* Footer Note */}
           <div className="mt-12 text-center text-slate-400 text-[11px] font-bold uppercase tracking-widest">
             Protecting your personal data is our top priority. Need help?{" "}
             <Link

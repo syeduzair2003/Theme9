@@ -82,7 +82,6 @@ const OfferDetailsPage = async ({
       <section className="bg-white border-b border-[#800000]/5 pt-[104px] md:pt-[128px] pb-8 px-4 lg:px-20">
         <div className="container mx-auto">
           <nav aria-label="Breadcrumb" className="flex flex-col gap-3">
-            {/* Upper Track Route List */}
             <ol className="flex flex-wrap items-center gap-4 text-[10px] font-black uppercase tracking-[0.3em]">
               <li className="flex items-center gap-3">
                 <Link
@@ -139,10 +138,8 @@ const OfferDetailsPage = async ({
       <section className="py-10 px-4 lg:px-20 bg-[#fffde0]">
         <div className="container mx-auto">
           <div className="flex flex-col lg:flex-row gap-8 items-start">
-            {/* Left Side: Sleek & Compact Product Details Card */}
             <div className="w-full lg:w-2/3 bg-white rounded-2xl border border-[#EADDCA]/40 p-5 md:p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
               <div className="flex flex-col md:flex-row gap-6 items-start border-b border-slate-100 pb-6">
-                {/* Compact High-Fidelity Image Box (Fixed Width to Avoid Stretching) */}
                 <div className="w-full md:w-44 relative aspect-square bg-gradient-to-br from-slate-50 to-white rounded-xl overflow-hidden border border-slate-100 p-3 flex flex-shrink-0 items-center justify-center group shadow-sm">
                   <Image
                     src={getBaseImageUrl(
@@ -158,10 +155,8 @@ const OfferDetailsPage = async ({
                   />
                 </div>
 
-                {/* Tightly Aligned Content Area */}
                 <div className="w-full flex flex-col justify-between min-h-[176px]">
                   <div>
-                    {/* Compact Responsive Heading with Line Clamp protection */}
                     <h1
                       className="text-lg md:text-xl font-black text-[#1A1A1A] leading-snug tracking-tight mb-3 line-clamp-2 hover:line-clamp-none transition-all duration-300"
                       title={cleanProductTitle}
@@ -169,7 +164,6 @@ const OfferDetailsPage = async ({
                       {cleanProductTitle}
                     </h1>
 
-                    {/* Micro-Pricing Panel */}
                     <div className="inline-flex items-center p-2.5 px-4 bg-[#800000]/5 rounded-xl border border-[#800000]/5">
                       <div className="flex flex-col">
                         <span className="text-[9px] uppercase tracking-widest text-slate-400 font-bold mb-0.5">
@@ -191,7 +185,6 @@ const OfferDetailsPage = async ({
                     </div>
                   </div>
 
-                  {/* Action Button Strip */}
                   <div className="mt-4 md:mt-0">
                     <OfferOutUrl
                       domain={companyDomain}
@@ -210,7 +203,6 @@ const OfferDetailsPage = async ({
                 </div>
               </div>
 
-              {/* Description Details Block */}
               {response?.offer_detail && (
                 <div className="mt-6 prose prose-slate max-w-none">
                   <h3 className="text-md font-bold text-[#1A1A1A] mb-2.5 flex items-center gap-2">
@@ -225,9 +217,7 @@ const OfferDetailsPage = async ({
               )}
             </div>
 
-            {/* Right Side: Sticky Sidebar Component Stack */}
             <div className="w-full lg:w-1/3 space-y-6">
-              {/* Premium Merchant Card Layout */}
               <div className="bg-white border border-[#EADDCA]/40 rounded-3xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
                 <div className="flex flex-col items-center text-center">
                   <div className="relative w-full h-24 bg-gradient-to-br from-slate-50 to-white rounded-2xl overflow-hidden p-4 border border-slate-100 flex items-center justify-center">
@@ -254,7 +244,6 @@ const OfferDetailsPage = async ({
                 </div>
               </div>
 
-              {/* Feedback Widget Container */}
               <div className="bg-gradient-to-br from-slate-50 to-white border border-slate-200/60 rounded-3xl p-6 shadow-inner">
                 <RateUs
                   offer_id={response?.unique_id || ""}
@@ -262,14 +251,12 @@ const OfferDetailsPage = async ({
                 />
               </div>
 
-              {/* Contextual Navigation Sidebar Linkset - Redesigned Exact to Screenshot Match */}
               {cat?.length > 0 && (
                 <div className="bg-white border border-[#EADDCA]/40 rounded-3xl p-6 shadow-sm">
                   <h4 className="text-md font-black text-[#1A1A1A] mb-4 border-b border-slate-100 pb-3 flex items-center justify-between">
                     <span>More from {response?.merchant?.merchant_name}</span>
                   </h4>
 
-                  {/* Clean list with exact image layout mechanics */}
                   <div className="space-y-1">
                     {cat.slice(0, 6).map((category, i) => (
                       <Link
@@ -278,14 +265,12 @@ const OfferDetailsPage = async ({
                         className="flex items-center justify-between group transition-all duration-200 py-2.5 px-3.5 rounded-xl hover:bg-[#800000]/[0.04] text-slate-700"
                       >
                         <div className="flex items-center gap-3 min-w-0">
-                          {/* Dynamic Accent Bullet Dot */}
                           <span className="w-1.5 h-1.5 rounded-full bg-slate-300 group-hover:bg-[#800000] transition-colors duration-200 flex-shrink-0" />
                           <span className="text-xs font-semibold tracking-wide text-slate-600 group-hover:text-slate-900 transition-colors duration-200 truncate">
                             {category?.name}
                           </span>
                         </div>
 
-                        {/* High-Fidelity Horizontal Micro Pill Capsule Accent */}
                         <span className="w-5 h-2 rounded-full bg-[#800000]/5 group-hover:bg-[#800000] transition-colors duration-200 flex-shrink-0" />
                       </Link>
                     ))}
@@ -311,7 +296,6 @@ const OfferDetailsPage = async ({
             </div>
           </div>
 
-          {/* Related Cross-Sell Products Grid */}
           {similarCategory?.length > 0 && (
             <div className="mt-20">
               <h2 className="text-xl md:text-2xl font-black text-[#1A1A1A] mb-8 capitalize flex items-center gap-3">
