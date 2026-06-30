@@ -46,7 +46,7 @@ const page = async () => {
             </nav>
 
             {/* Main Centered Heading */}
-            <h1 className="text-5xl md:text-7xl lg:text-7xl font-black text-[#1A1A1A] leading-[1] tracking-tighter mb-8">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#1A1A1A] leading-[1] tracking-tighter mb-8">
               Explore Our <br />
               <span className="text-[#800000] relative italic px-4">
                 Top-Rated
@@ -55,7 +55,7 @@ const page = async () => {
             </h1>
 
             {/* Description with Max Width */}
-            <p className="text-[#1A1A1A]/60 text-base md:text-xl max-w-2xl font-medium leading-relaxed mb-0">
+            <p className="text-[#1A1A1A]/60 text-sm md:text-base max-w-2xl font-medium leading-relaxed mb-0">
               Discover exclusive deals and premium brands curated just for you.{" "}
               <br className="hidden md:block" />
               Your journey to the best discounts starts here.

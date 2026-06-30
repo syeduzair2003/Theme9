@@ -30,7 +30,6 @@ const AllStoresPage = async ({
   slug,
   page,
 }: Props) => {
-  // --- CORE LOGIC (FULL & SECURE) ---
   const cookieData = await cookieService.get("domain");
   const companyDomain = cookieData?.domain || "";
   const currentPage = Math.max(1, parseInt(page || "1", 10));
@@ -71,7 +70,7 @@ const AllStoresPage = async ({
           <div className="max-w-6xl mx-auto relative overflow-hidden bg-[#FDFBE7] rounded-b-[2.5rem] md:rounded-b-[4.5rem] border-x border-b-2 border-[#EADDCA]/80 pt-32 pb-14 md:pt-30 md:pb-12 shadow-sm px-8 md:px-16">
             <div className="flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">
               <div className="max-w-xl text-center md:text-left mb-6">
-                {/* --- BREADCRUMBS --- */}
+                {/* BREADCRUMBS */}
                 <nav
                   className="flex justify-center md:justify-start mb-4"
                   aria-label="Breadcrumb"
@@ -221,7 +220,7 @@ const AllStoresPage = async ({
         </Reveal>
       </div>
 
-      {/* --- STORES GRID --- */}
+      {/* STORES GRID */}
       <div className="container mx-auto px-6">
         {paginatedMerchants.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
@@ -246,7 +245,7 @@ const AllStoresPage = async ({
           </Reveal>
         )}
 
-        {/* --- PAGINATION --- */}
+        {/* PAGINATION */}
         {totalPages > 1 && (
           <Reveal delay={0.4}>
             <div className="mt-16 flex justify-center">
@@ -260,7 +259,7 @@ const AllStoresPage = async ({
         )}
       </div>
 
-      {/* --- SCHEMA --- */}
+      {/* SCHEMA */}
       <MerchantPageSchema
         PAGE_SIZE={PAGE_SIZE}
         apiSlug={apiSlug}

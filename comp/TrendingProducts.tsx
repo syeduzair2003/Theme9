@@ -69,7 +69,7 @@ const TrendingProducts = async ({
             )}
 
             <div className="space-y-2 text-left">
-              <h2 className="text-4xl md:text-5xl font-black text-[#1A1A1A] tracking-tight">
+              <h2 className="text-3xl md:text-4xl font-black text-[#1A1A1A] tracking-tight">
                 {headingFirst} <br />
                 <span className="text-3xl md:text-4xl text-[#800000] drop-shadow-[0_0_15px_rgba(128,0,0,0.1)]">
                   {headingSecond}

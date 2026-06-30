@@ -35,13 +35,13 @@ const FeaturedDeals = async ({ companyId, mer_slug_type, mer_slug }: Props) => {
               <p className="text-[#800000] font-black text-xs mb-3 uppercase tracking-[0.3em] opacity-90">
                 Handpicked for you
               </p>
-              <h2 className="text-4xl md:text-5xl font-black text-[#1A1A1A] mb-4 tracking-tighter">
+              <h2 className="text-3xl md:text-4xl font-black text-[#1A1A1A] mb-4 tracking-tighter">
                 {firstHalf ? firstHalf : `Featured`}{" "}
                 <span className="text-[#800000] drop-shadow-[0_0_15px_rgba(128,0,0,0.3)]">
                   {secondHalf ? secondHalf : `Deals`}
                 </span>
               </h2>
-              <p className="text-[#1A1A1A]/60 text-lg leading-relaxed max-w-3xl font-medium">
+              <p className="text-[#1A1A1A]/60 text-base leading-relaxed max-w-3xl font-medium">
                 {content}
               </p>
             </div>

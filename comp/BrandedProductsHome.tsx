@@ -71,7 +71,7 @@ const BrandedProductsHome = async ({
               </span>
               Trending Now
             </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#1A1A1A] leading-tight m-0 tracking-tight">
+            <h2 className="text-3xl md:text-4xl font-black text-[#1A1A1A] leading-tight m-0 tracking-tight">
               Brand{" "}
               <span className="font-black text-[#800000] leading-tight m-0 tracking-tight">
                 Spotlight

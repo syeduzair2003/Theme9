@@ -71,7 +71,7 @@ const ProductCard = async ({ offer, mer_slug, mer_slug_type, type }: any) => {
           </span>
         </div>
 
-        <h3 className="text-sm font-black text-gray-500 leading-snug line-clamp-2 min-h-[40px] group-hover:text-[#800000] transition-colors duration-500 tracking-tight">
+        <h3 className="text-sm font-bold text-gray-500 leading-snug line-clamp-2 min-h-[40px] group-hover:text-[#800000] transition-colors duration-500 tracking-tight">
           {type === "product"
             ? product?.offer_title
             : discardHTMLTags(product?.offer_title)}

@@ -85,11 +85,11 @@ const OfferCard = async ({ offer, mer_slug_type, mer_slug, type }: Props) => {
         {/* Middle Section: Title & Tag */}
         <div className="relative z-10 flex-1">
           {finalDiscountTag && (
-            <span className="inline-block bg-[#800000] text-[#FDFCF0] text-[9px] font-black px-2.5 py-1 rounded-lg mb-3 tracking-wider shadow-sm">
+            <span className="inline-block bg-[#800000] text-[#FDFCF0] text-[9px] font-bold px-2.5 py-1 rounded-lg mb-3 tracking-wider shadow-sm">
               {finalDiscountTag}
             </span>
           )}
-          <h3 className="text-[#1A1A1A] text-base md:text-lg font-black leading-snug mb-2 line-clamp-2 group-hover:text-[#800000] transition-colors duration-300">
+          <h3 className="text-[#1A1A1A] text-sm md:text-base font-bold leading-snug mb-2 line-clamp-2 group-hover:text-[#800000] transition-colors duration-300">
             {type === "product"
               ? `${product?.offer_title}`
               : `${discardHTMLTags(offer?.offer?.offer_title)}`}

@@ -19,7 +19,7 @@ const CategorySidebar = async ({
 }: Props) => {
   return (
     <div className="space-y-6">
-      <h4 className="text-xl font-black text-[#1A1A1A] border-b border-[#800000]/10 pb-4 leading-tight tracking-tight uppercase text-xs sm:text-xl">
+      <h4 className="text-sm md:text-base font-black text-[#1A1A1A] border-b border-[#800000]/10 pb-4 leading-tight uppercase">
         {parentCategory ? `${parentCategory} Deals` : "Popular Categories"}
       </h4>
 
@@ -32,7 +32,7 @@ const CategorySidebar = async ({
           >
             <div className="flex items-center gap-3 overflow-hidden">
               <span className="w-1.5 h-1.5 bg-[#800000]/20 group-hover:bg-[#800000] rounded-full transition-colors flex-shrink-0"></span>
-              <span className="text-[#1A1A1A]/70 group-hover:text-[#1A1A1A] font-medium truncate transition-colors">
+              <span className="text-[#1A1A1A]/70 text-sm group-hover:text-[#1A1A1A] font-medium truncate transition-colors">
                 {category?.name}
               </span>
             </div>
@@ -48,7 +48,7 @@ const CategorySidebar = async ({
       {/* View All Button */}
       <Link
         href={`/${cat_slug}`}
-        className="flex items-center justify-center gap-3 w-full py-4 bg-[#800000]/5 text-[#800000] font-black text-xs uppercase tracking-widest rounded-2xl hover:bg-[#800000] hover:text-white transition-all duration-500 shadow-sm group border border-[#800000]/10"
+        className="flex items-center justify-center gap-2 w-full py-3 bg-[#800000]/5 text-[#800000] font-black text-[11px] uppercase tracking-wider rounded-2xl hover:bg-[#800000] hover:text-white transition-all duration-500 shadow-sm group border border-[#800000]/10"
       >
         <span>View All Categories</span>
         <FontAwesomeIcon

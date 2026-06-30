@@ -90,7 +90,7 @@ const OffersListView = ({
           <div className="flex items-center gap-3 mb-2">
             <div className="flex items-center gap-1">
               <div className="w-1 h-1 rounded-full bg-emerald-500"></div>
-              <span className="text-[7px] font-black text-emerald-600 uppercase tracking-widest">
+              <span className="text-[8px] font-black text-emerald-600 uppercase tracking-widest">
                 Verified
               </span>
             </div>
@@ -100,7 +100,7 @@ const OffersListView = ({
           </div>
 
           {/* Heading */}
-          <h4 className="text-lg lg:text-xl font-black text-[#1A1A1A] leading-tight tracking-tighter uppercase transition-colors group-hover:text-[#800000] min-h-[3rem] lg:min-h-0">
+          <h4 className="text-sm md:text-base font-bold text-[#1A1A1A] leading-tight tracking-tighter uppercase transition-colors group-hover:text-[#800000] min-h-[3rem] lg:min-h-0">
             {discardHTMLTags(product?.offer?.offer_title?.replaceAll("_", " "))}
           </h4>
 

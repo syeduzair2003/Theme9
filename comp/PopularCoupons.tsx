@@ -46,14 +46,14 @@ const PopularCoupons = async ({
                 Verified Savings
               </span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-black text-[#800000] drop-shadow-[0_0_10px_rgba(128,0,0,0.3)] leading-tight mb-6">
+            <h2 className="text-3xl md:text-4xl font-black text-[#800000] drop-shadow-[0_0_10px_rgba(128,0,0,0.3)] leading-tight mb-6">
               {firstHalf || "Today's"} <br />
               <span className="text-[#1A1A1A]">{secondHalf || "Deals"}</span>
             </h2>
           </Reveal>
 
           <Reveal delay={0.2}>
-            <p className="text-[#1A1A1A]/60 text-lg leading-relaxed max-w-3xl font-medium">
+            <p className="text-[#1A1A1A]/60 text-base leading-relaxed max-w-3xl font-medium">
               {content ||
                 "Hand-picked premium discounts from world-class brands, updated every hour."}
             </p>

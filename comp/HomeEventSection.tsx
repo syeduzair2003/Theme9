@@ -64,14 +64,14 @@ const HomeEventSection = async ({
                   Explore Event Deals
                 </p>
               </div>
-              <h2 className="text-4xl md:text-5xl font-black text-[#1A1A1A] tracking-tighter mb-4">
+              <h2 className="text-3xl md:text-4xl font-black text-[#1A1A1A] tracking-tighter mb-4">
                 <span className="text-[#800000]">{firstHalf}</span>
                 {secondHalf || " Trending Deals"}
               </h2>
             </ScaleReveal>
 
             <ScaleReveal delay={0.2}>
-              <p className="text-[#1A1A1A]/60 text-lg leading-relaxed max-w-3xl font-medium">
+              <p className="text-[#1A1A1A]/60 text-base leading-relaxed max-w-3xl font-medium">
                 {discardHTMLTags(content)}
               </p>
             </ScaleReveal>

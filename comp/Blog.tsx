@@ -39,7 +39,7 @@ const Blog = ({ data, preloadedImage }: Props) => {
         <h4 className="">
           <Link
             href={data?.link}
-            className="no-underline text-2xl font-black !text-[#1A1A1A] mb-4 leading-tight group-hover:!text-[#800000] transition-colors duration-300 line-clamp-2"
+            className="no-underline text-xl font-bold !text-[#1A1A1A] mb-4 leading-tight group-hover:!text-[#800000] transition-colors duration-300 line-clamp-2"
           >
             {discardHTMLTags(data?.title)}
           </Link>

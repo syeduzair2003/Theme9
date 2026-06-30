@@ -117,12 +117,12 @@ const CategoryMerchantPage = async ({ params }: Props) => {
               </nav>
 
               {/* Heading */}
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-black leading-[1.2] md:leading-[1.1] text-white tracking-tighter">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-black leading-[1.2] md:leading-[1.1] text-white tracking-tighter">
                 {getRandomCategorySeoTitle(catRes?.name)}
               </h1>
 
               {/* Description */}
-              <p className="text-sm md:text-lg text-[#fffde0]/80 max-w-xl font-medium leading-relaxed mx-auto lg:mx-0 px-2 md:px-0">
+              <p className="text-sm md:text-base text-[#fffde0]/80 max-w-xl font-medium leading-relaxed mx-auto lg:mx-0 px-2 md:px-0">
                 Save big with our hand-picked deals and verified promo codes for
                 top brands in{" "}
                 <span className="text-white underline decoration-[#fffde0]/30">
@@ -201,7 +201,7 @@ const CategoryMerchantPage = async ({ params }: Props) => {
           <div className="flex flex-col lg:flex-row gap-8 md:gap-12">
             <div className="w-full lg:w-2/3 xl:w-3/4 order-1 lg:order-1">
               <div className="mb-8 md:mb-12 text-center lg:text-left">
-                <h2 className="text-2xl md:text-3xl font-black text-[#1A1A1A] mb-3 md:mb-4 tracking-tighter leading-tight">
+                <h2 className="text-2xl md:text-3xl font-bold text-[#1A1A1A] mb-3 md:mb-4 tracking-tighter leading-tight">
                   {getRandomCategoryCouponsTitle(catRes?.name)}
                 </h2>
                 <div className="w-16 md:w-24 h-[3px] bg-[#800000] rounded-full mx-auto lg:mx-0"></div>

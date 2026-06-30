@@ -53,7 +53,7 @@ const TagsSidebar = async ({ company_id, merchant_id }: Props) => {
               >
                 <span
                   className={`
-                text-[11px] font-black uppercase tracking-widest
+                text-[11px] font-bold uppercase tracking-wider
                 ${isLongTag ? "whitespace-normal text-left max-w-[180px]" : "whitespace-nowrap"}
               `}
                 >

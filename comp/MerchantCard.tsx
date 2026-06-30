@@ -42,7 +42,7 @@ const MerchantCard = ({
 
           <div className="flex flex-col flex-grow items-center text-center z-10 px-2">
             <h3 className="group-hover:text-[#800000] transition-colors duration-300">
-              <span className="block text-xl font-black text-[#1A1A1A] uppercase tracking-tighter leading-none">
+              <span className="block text-lg font-extrabold text-[#1A1A1A] uppercase leading-none">
                 {nameParts[0]}
               </span>
               {nameParts.length > 1 && (

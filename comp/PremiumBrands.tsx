@@ -41,7 +41,7 @@ const PremiumBrand = async ({ companyId, mer_slug, mer_slug_type }: Props) => {
                 <p className="text-[#800000] font-bold text-[10px] md:text-xs mb-3 uppercase tracking-[0.2em]">
                   Trusted by millions
                 </p>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#1A1A1A] tracking-tighter leading-[1.1] mb-4">
+                <h2 className="text-3xl md:text-4xl font-black text-[#1A1A1A] tracking-tighter leading-[1.1] mb-4">
                   {heading}
                 </h2>
                 {subHeading && (

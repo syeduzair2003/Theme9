@@ -283,7 +283,7 @@ const Footer = async ({
                       <br />© {new Date().getFullYear()} All Rights Reserved.
                     </div>
                     <div className="flex items-center justify-center lg:justify-start gap-2 opacity-60">
-                      <span className="font-extrabold text-[#FFFDF5]">
+                      <span className="font-bold text-[#FFFDF5]">
                         Operated by Odd Technologies Pvt. Ltd.
                         <br />
                         <span className="text-[#FFFDF5]">

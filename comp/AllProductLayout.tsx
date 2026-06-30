@@ -82,7 +82,6 @@ const AllProductLayout = async ({
   return (
     <div className="bg-[#fffde0] min-h-screen font-sans">
       <section className="relative overflow-hidden bg-[#FDFBE7] border-b border-[#EADDCA] pt-32 sm:pt-40 lg:pt-20 pb-10">
-        {/* Background Decorative Glow */}
         <div className="absolute top-10 right-0 w-[350px] h-[350px] bg-[#800000]/5 blur-[90px] rounded-full pointer-events-none" />
 
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -98,7 +97,6 @@ const AllProductLayout = async ({
                     >
                       Home
                     </Link>
-                    {/* Minimalist Dot */}
                     <span className="w-1.5 h-1.5 rounded-full bg-[#800000]" />
                   </li>
 
@@ -147,7 +145,7 @@ const AllProductLayout = async ({
               </nav>
 
               {/* Heading */}
-              <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-black text-[#1A1A1A] leading-[1.1] mb-6 tracking-tight">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#1A1A1A] leading-[1.1] mb-6 tracking-tight">
                 {categoryName ? (
                   <>
                     Best Deals on{" "}
@@ -161,7 +159,7 @@ const AllProductLayout = async ({
                 )}
               </h1>
 
-              <p className="text-[#4A4A4A] text-lg md:text-xl max-w-xl leading-relaxed border-l-4 border-[#800000] pl-6 py-2">
+              <p className="text-[#4A4A4A] text-base md:text-lg max-w-xl leading-relaxed border-l-4 border-[#800000] pl-6 py-2">
                 Save more with our hand-picked discounts and verified offers
                 from top international brands.
               </p>
@@ -193,11 +191,11 @@ const AllProductLayout = async ({
           <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col mb-10 gap-4">
               <div>
-                <span className="px-5 py-1.5 rounded-full border border-[#800000]/20 bg-[#800000]/5 text-[11px] font-bold tracking-[0.3em] uppercase text-[#800000] inline-block mb-3">
+                <span className="px-5 py-1.5 rounded-full border border-[#800000]/20 bg-[#800000]/5 text-[10px] font-bold tracking-[0.3em] uppercase text-[#800000] inline-block mb-3">
                   Top Rated Partners
                 </span>
 
-                <h3 className="text-4xl md:text-5xl font-black text-[#1A1A1A] tracking-tight flex items-center flex-wrap gap-x-2">
+                <h3 className="text-2xl md:text-3xl font-black text-[#1A1A1A] tracking-tight flex items-center flex-wrap gap-x-2">
                   <span className="text-[#1A1A1A]">Trending</span>
                   <span className="text-[#800000]">Stores</span>
                 </h3>
@@ -257,7 +255,6 @@ const AllProductLayout = async ({
           <div className="flex flex-col lg:flex-row gap-8">
             {/* Main Content Area */}
             <div className="flex-1 min-w-0 order-1 lg:order-2">
-              {/* Card Box Div */}
               <div className="bg-white p-4 md:p-8 rounded-[1.5rem] md:rounded-[2.5rem] shadow-[0_10px_40px_rgba(128,0,0,0.02)] border border-[#EADDCA]/50">
                 <ProductOffers
                   category_id={categoryId}

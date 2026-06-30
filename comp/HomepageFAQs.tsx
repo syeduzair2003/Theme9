@@ -24,7 +24,7 @@ const HomepageFAQs = async ({ store_slug, slug_type }: Props) => {
           </span>
 
           <div className="w-full text-center mt-6">
-            <h2 className="text-5xl md:text-6xl font-black text-[#1A1A1A] tracking-tighter leading-[1.1] max-w-3xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-black text-[#1A1A1A] tracking-tighter leading-[1.1] max-w-3xl mx-auto">
               Everything you <br />
               <span className="text-[#800000] drop-shadow-[0_0_10px_rgba(128,0,0,0.4)] brightness-125">
                 need to know.

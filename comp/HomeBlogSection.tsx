@@ -31,7 +31,7 @@ const HomeBlogSection = async ({
               <p className="text-[#800000] font-bold text-xs mb-3 uppercase tracking-[0.2em]">
                 Stay Updated
               </p>
-              <h2 className="text-4xl md:text-5xl font-black text-[#1A1A1A] tracking-tighter leading-[1.1]">
+              <h2 className="text-3xl md:text-4xl font-black text-[#1A1A1A] tracking-tighter leading-[1.1]">
                 Weekly <span className="text-[#800000]">News & Insights</span>
               </h2>
             </div>

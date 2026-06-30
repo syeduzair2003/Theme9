@@ -91,7 +91,7 @@ const CatPage = async ({ company_id }: Props) => {
             href={cat?.category?.url}
             className="no-underline block border-b border-[#800000]/10 pb-5 mb-4 group/link"
           >
-            <h4 className="text-xl font-black text-[#1A1A1A] group-hover:text-[#800000] transition-all duration-300 flex items-center justify-between tracking-tight">
+            <h4 className="text-md font-bold text-[#1A1A1A] group-hover:text-[#800000] transition-all duration-300 flex items-center justify-between tracking-tight">
               {cat?.category?.name}
 
               <div className="w-9 h-9 rounded-full bg-[#800000]/5 flex items-center justify-center text-[#800000] scale-0 group-hover:scale-100 transition-all duration-500 shadow-sm border border-[#800000]/10">

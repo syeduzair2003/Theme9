@@ -44,13 +44,13 @@ const ExploreCategory = async ({ companyId, cat_slug, slug_type }: Props) => {
                 Explore Categories
               </p>
             </div>
-            <h2 className="text-4xl md:text-5xl font-black text-[#1A1A1A] mb-4 tracking-tight">
+            <h2 className="text-3xl md:text-4xl font-black text-[#1A1A1A] mb-4 tracking-tight">
               {firstHalf ? firstHalf : `Browse by`}{" "}
               <span className="text-[#800000]">
                 {secondHalf ? secondHalf : `Category`}
               </span>
             </h2>
-            <p className="text-[#1A1A1A]/60 text-lg leading-relaxed max-w-3xl font-medium">
+            <p className="text-[#1A1A1A]/60 text-base leading-relaxed max-w-3xl font-medium">
               {content}
             </p>
           </div>

@@ -105,7 +105,7 @@ const OffersPage = async ({
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
             {/* Left Content Area */}
             <div className="w-full lg:w-[55%] space-y-8">
-              <nav className="inline-flex items-center gap-3 text-[9px] font-black tracking-[0.3em] uppercase text-slate-400">
+              <nav className="inline-flex items-center gap-3 text-[10px] font-bold tracking-[0.3em] uppercase text-slate-400">
                 <Link
                   href="/"
                   className="hover:text-[#800000] transition-colors"
@@ -127,7 +127,7 @@ const OffersPage = async ({
 
               {/* Heading & Description */}
               <div className="space-y-6">
-                <h1 className="text-4xl md:text-5xl lg:text-5xl font-black text-[#1A1A1A] leading-[1.1] tracking-tighter uppercase">
+                <h1 className="text-2xl md:text-3xl font-black text-[#1A1A1A] leading-[1.1] tracking-tighter uppercase">
                   {heading ? (
                     discardHTMLTags(heading)
                   ) : (
@@ -225,7 +225,7 @@ const OffersPage = async ({
                     </div>
                     <div className="absolute top-4 right-5 flex items-center gap-1.5 px-2 py-1 bg-white rounded-full border border-[#800000]/10">
                       <div className="w-1 h-1 rounded-full bg-emerald-500 animate-pulse"></div>
-                      <span className="text-[7px] font-black tracking-widest text-[#800000] uppercase">
+                      <span className="text-[8px] font-black tracking-widest text-[#800000] uppercase">
                         Verified
                       </span>
                     </div>
@@ -234,10 +234,10 @@ const OffersPage = async ({
                   <div className="p-6 pb-8 space-y-4 bg-white">
                     <div className="flex items-center justify-between gap-4">
                       <div className="min-w-0">
-                        <p className="text-[8px] font-black text-[#800000] uppercase tracking-[0.3em] mb-0.5 opacity-60">
+                        <p className="text-[9px] font-black text-[#800000] uppercase tracking-[0.3em] mb-0.5 opacity-60">
                           Brand Identity
                         </p>
-                        <h4 className="text-xl md:text-2xl font-black text-[#1A1A1A] tracking-tighter uppercase truncate leading-none">
+                        <h4 className="text-sm md:text-base font-bold text-[#1A1A1A] tracking-tighter uppercase truncate leading-none">
                           {merchant_details?.data?.merchant_name}
                         </h4>
                       </div>
@@ -245,7 +245,7 @@ const OffersPage = async ({
                         <span className="text-xl font-black text-[#1A1A1A] tracking-tighter">
                           {getRandomRating(merchant_details?.data?.rating)}
                         </span>
-                        <div className="flex text-amber-400 text-[7px] gap-0.5 mt-1">
+                        <div className="flex text-amber-400 text-[7px] gap-0.5">
                           <RenderRating
                             rating={getRandomRating(
                               merchant_details?.data?.rating,
@@ -392,17 +392,18 @@ const OffersPage = async ({
                   </div>
                 )}
 
-                <div className="mt-10 pt-6 border-t border-slate-50">
+                {/* 🎯 Parent div mein 'flex justify-center' add kiya hai taake button perfectly center ho jaye */}
+                <div className="mt-10 pt-6 border-t border-slate-50 flex justify-center">
                   <Link
                     href={`/all-stores/A`}
-                    className="flex items-center justify-between group no-underline bg-[#FDFCF0] p-4 rounded-2xl border border-[#800000]/5 transition-all hover:bg-[#800000] hover:text-white"
+                    className="inline-flex items-center justify-center gap-2.5 w-fit group no-underline bg-[#800000]/5 px-6 py-3 rounded-2xl border border-[#800000]/10 transition-all hover:bg-[#800000] hover:text-white"
                   >
-                    <span className="font-black text-[10px] uppercase tracking-widest transition-colors group-hover:text-white text-[#1A1A1A]">
+                    <span className="font-black text-[10px] uppercase tracking-widest transition-colors group-hover:text-white text-[#800000]">
                       Explore Gallery
                     </span>
                     <FontAwesomeIcon
                       icon={faArrowRight}
-                      className="w-3 h-3 transition-transform group-hover:translate-x-1"
+                      className="w-3 h-3 transition-transform group-hover:translate-x-1 text-white"
                     />
                   </Link>
                 </div>
